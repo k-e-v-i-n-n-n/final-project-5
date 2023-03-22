@@ -1,0 +1,2 @@
+class WordJoinsExpressionsController < ApplicationController
+end
