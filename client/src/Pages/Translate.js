@@ -1,10 +1,10 @@
 import TextBoxes from "../components/TextBoxes";
 
-const Translate = () => {
+const Translate = ({translateText}) => {
 
 return (
     <div className="translate-page">
-        <TextBoxes/>
+        <TextBoxes translateText={translateText}/>
     </div>
 )
 
