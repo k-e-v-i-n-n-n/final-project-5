@@ -22,10 +22,10 @@ function App() {
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 
-  // useEffect(() =>{
-  //   fetch("/me")
-  //   .then((r) => r.json()).then((r) => setUser(r) )
-  // }, [])
+  useEffect(() =>{
+    fetch("/me")
+    .then((r) => r.json()).then((r) => setUser(r) )
+  }, [])
 
   return (
     <>

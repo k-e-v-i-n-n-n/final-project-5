@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
- post "/signup", to: "user#create"
+ post "/signup", to: "users#create"
 
  post "/login", to: "sessions#create"
 
- get "/me", to: "user#show"
+ get "/me", to: "users#show"
 
 
 end

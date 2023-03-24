@@ -47,3 +47,288 @@ Migrating to CreateWordJoinsExpressions (20230320183430)
   [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 19:51:07 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 19:54:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 19:58:37 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 19:59:00 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:00:21 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started OPTIONS "/signup" for ::1 at 2023-03-23 20:04:46 -0700
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/signup"):
+  
+Started OPTIONS "/signup" for ::1 at 2023-03-23 20:12:35 -0700
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/signup"):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:16:41 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:16:41 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:16:43 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:16:43 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started OPTIONS "/signup" for ::1 at 2023-03-23 20:16:52 -0700
+  
+ActionController::RoutingError (No route matches [OPTIONS] "/signup"):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:17:10 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:17:10 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:17:12 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:17:32 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:17:32 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:17:35 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:17:54 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:18:04 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:22:45 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:23:08 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:23:09 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:23:10 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:23:19 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:23:19 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:23:21 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:27:57 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:27:57 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:27:59 -0700
+  
+ActionController::RoutingError (uninitialized constant UserController
+Did you mean?  UsersController):
+  
+Started GET "/signup" for ::1 at 2023-03-23 20:28:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/favicon.ico" for ::1 at 2023-03-23 20:28:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/login" for ::1 at 2023-03-23 20:28:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for ::1 at 2023-03-23 20:29:57 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/signup" for ::1 at 2023-03-23 20:30:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/me" for ::1 at 2023-03-23 20:30:22 -0700
+Processing by UsersController#show as HTML
+Completed 500 Internal Server Error in 4ms (Allocations: 665)
+
+
+  
+ArgumentError (wrong number of arguments (given 3, expected 1..2)):
+  
+app/models/user.rb:4:in `<class:User>'
+app/models/user.rb:1:in `<main>'
+app/controllers/users_controller.rb:15:in `show'
+Started GET "/me" for ::1 at 2023-03-23 20:33:22 -0700
+Processing by UsersController#show as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 31ms (Views: 1.4ms | ActiveRecord: 11.5ms | Allocations: 10062)
+
+
+Started GET "/signup" for ::1 at 2023-03-23 20:33:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/signup"):
+  
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:33:34 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 10ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 751)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:33:34 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 749)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:33:36 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000010690a0e0>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 42ms (Views: 0.8ms | ActiveRecord: 16.1ms | Allocations: 21067)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:33:53 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 401 Unauthorized in 6ms (Views: 1.0ms | ActiveRecord: 0.5ms | Allocations: 734)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-23 20:33:53 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 750)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:34:01 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000106c681d8>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (1.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 14ms (Views: 0.6ms | ActiveRecord: 2.9ms | Allocations: 3545)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-23 20:34:05 -0700
+  
+ActionController::RoutingError (uninitialized constant SessionsController
+Did you mean?  SessionController):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-23 20:34:09 -0700
+  
+ActionController::RoutingError (uninitialized constant SessionsController
+Did you mean?  SessionController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-23 20:34:13 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000001212286f8>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (2.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 22ms (Views: 0.6ms | ActiveRecord: 6.4ms | Allocations: 3544)
+
+
