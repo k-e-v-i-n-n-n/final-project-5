@@ -17,7 +17,7 @@ function TextBoxes({translateText}) {
   return (
     <>
       <div className="text-box-container">
-        <textarea className="text-box" onChange={popText} value={translationObject[sourceLang]} placeholder={sourceLang == "en" ? "Enter a word or phrase in English..." : "Saisir un mot ou une expression en français"}/>
+        <textarea className="text-box" onChange={popText} value={translationObject[sourceLang]} placeholder={sourceLang == "en" ? "Enter a word or phrase in English..." : "Saisir un mot ou une expression en français..."}/>
           <button className="text-box-center" onClick={switchLang} >⮂</button>
         <textarea className="text-box" value={translationObject[targetLang]} disabled />
       </div>

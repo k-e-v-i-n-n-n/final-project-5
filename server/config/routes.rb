@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   resources :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+ post "/signup", to: "user#create"
+
+ post "/login", to: "sessions#create"
+
+ get "/me", to: "user#show"
+
+
 end

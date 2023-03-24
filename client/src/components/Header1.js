@@ -1,4 +1,5 @@
-import React from "react";
+import React from "react"
+import {Link} from "react-router-dom"
 import avatar from "../images/avatar.png"
 
 
@@ -18,8 +19,10 @@ function Header1() {
           <h1 className="title valign-text-middle">the french things</h1>
         </div>
       </div>
-      <div className="login-container">
-          <div className="login-text" >login</div>
+      <div className="login-icon-container">
+        <Link to="/login">
+          <div className="login-text">login</div>
+        </Link>
           <img className="avatar" src={avatar}/>
      
 

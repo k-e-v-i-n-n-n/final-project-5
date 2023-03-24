@@ -15,6 +15,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 
 /* *********************************************** Variables */
 
@@ -161,7 +166,7 @@ body {
   position: relative;
 }
 
-.login-container{
+.login-icon-container{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -169,17 +174,14 @@ body {
   gap:14px;
   padding: 14px;
 
-  /* position: relative;
-  right: 10px; */
-/* 
-  border: .2px solid black;
-  border-radius: .3px; */
   margin-left: auto;
   width: 100px;
 }
 
 .login-text{
   font-size: 12px;
+  color: black;
+  text-decoration: none;
 }
 
 .invisible-container{
@@ -211,7 +213,6 @@ body {
 }
 
 .nav-buttons {
-  /* position: relative; */
   font-weight: 400;
   font-size: 14px;
   text-align: center;
@@ -220,7 +221,71 @@ body {
   background: white;
   border-radius: 3px;
   border: .1px solid black;
-  /* border: none; */
+}
+
+/* ************************************************Login Page */
+
+.login-container {
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  /* justify-content: start; */
+  padding: 40px;
+  margin:40px;
+  border: black solid .3px;
+  border-radius: 3px;
+}
+
+.login-labels {
+  
+  font-size: 18px;
+  padding: 15px 0 4px;
+}
+
+.login-button-container{
+
+  display: flex;
+  justify-content: center;
+
+}
+
+.login-buttons{
+
+  color: white;
+  background-color: black;
+  margin: 38px 4px 4px 4px;
+  padding: 4px;
+  border-radius: 3px;;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+}
+
+.login-buttons:hover {
+
+  font-weight: 500;
+}
+
+#cancel{
+  background-color: rgb(191, 191, 191);
+}
+
+#cancel:hover{
+  background-color: rgb(162, 162, 162);
+}
+
+#error-username{
+  text-align: center;
+  color:rgb(205, 0, 0);
+  font-size: 12px;
+  margin-bottom: 0;
 }
 
 /* ********************************************* Translate Page */
@@ -294,6 +359,7 @@ body {
 
 textarea:disabled{
   background-color:white;
+ color: black;
 }
 
 
