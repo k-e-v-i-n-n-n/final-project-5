@@ -1,22 +1,29 @@
 class ExpressionsController < ApplicationController
+    rescue_from ActiveRecord::RecordNotFound, with: :not_found
+    rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
 
-    def new_expression
+    def index
+        expressions = Expression.all
+        render json: expressions
+    end
 
-        expression = Expression.find_or_create_by(expression_params)
-        french_split = expression.french.split(" ")
-        french_split.for_each {|word| 
-
-        new_word = Word.find_or_create_by()
-
-            }
-
+    def create
+        user = User.find_by!(id: session[:user_id])
+        expression = user.expressions.create!(expression_params)
+        render json: expression, status: :created
     end
 
     private
 
+    def unprocessable(invalid)
+        render json: {errors: invalid.record.errors.full_messages}, status: :unprocessable_entity
+    end
+
+    def not_found
+        render json: {errors: "Item not found..."}, status: :not_found
+    end
+
     def expression_params
-
-        params.permit(:french, :english, :source, :target)
-
+        params.permit(:french, :english, :target)
     end
 end

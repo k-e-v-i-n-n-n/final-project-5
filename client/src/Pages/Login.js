@@ -11,7 +11,8 @@ const Login = () => {
     const [errors, setErrors] = useState()
 
     const navigate = useNavigate()
-    const {setUser} = useContext(AppContext)
+    const {user, setUser} = useContext(AppContext)
+    console.log("user", user)
 
     function condRend(e){
         e.preventDefault()
@@ -33,7 +34,8 @@ const Login = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username, password})})
             .then(r => handleResponse(r))}
-
+    
+   
     function handleResponse(r){
         if(r.ok)
             {r.json().then((r) => {setUser(r); navigate("/")})}
@@ -43,6 +45,8 @@ const Login = () => {
     return(
 
         <div className="login-container" >
+
+            {user.username? <p>Bonjour, {user.username}</p> : 
             <form className="login-form" >
                 <label className="login-labels" >Username</label>
                 <input type="text" value={username} placeholder="kevin@thefrenchthings.com" onChange={(e) => setUsername(e.target.value)} />
@@ -50,7 +54,7 @@ const Login = () => {
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
                 {isSignup &&<label className="login-labels">Password Confirmation</label>}
                 {isSignup && <input type="password" value={passwordConfirmation} onChange={(e) => setPasswordConfirmation(e.target.value)}/>}
-                <div>
+                <div className="error-login-container" >
                     {errors?.map((err) => <p key={err} id="error-username">{err}</p>)}
                 </div>
                 <div className="login-button-container" >
@@ -58,7 +62,7 @@ const Login = () => {
                     {!isSignup && <button className="login-buttons" onClick={(e) => condRend(e)}>create account</button>}
                     {isSignup && <button className="login-buttons" id="cancel" onClick={(e) => condRend(e)} >cancel</button> }
                 </div>
-            </form>
+            </form>}
         </div>
     )
 }

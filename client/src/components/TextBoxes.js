@@ -1,7 +1,7 @@
 import {useContext, useState} from "react"
 import {AppContext} from "../Context";
 
-function TextBoxes({translateText}) {
+function TextBoxes({translateText, setSaveMode}) {
   
   const {sourceLang, setSourceLang, targetLang, setTargetLang, translationObject, setTranslationObject} = useContext(AppContext)
 
@@ -24,7 +24,7 @@ function TextBoxes({translateText}) {
 
       <div className="translate-button-container">
         <button className="text-box-buttons" onClick={translateText}>translate</button>
-        <button className="text-box-buttons">save</button>
+        <button className="text-box-buttons" onClick={() => setSaveMode(true) }>save</button>
         <button className="text-box-buttons" onClick={() => setTranslationObject(initialState)} >clear</button>
       </div>
   </>

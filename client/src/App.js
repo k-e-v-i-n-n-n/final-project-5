@@ -18,7 +18,6 @@ function App() {
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
     const response = await axios.get('http://localhost:8000/translate', {params : data})
-    console.log('response', response)
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 
@@ -26,6 +25,8 @@ function App() {
     fetch("/me")
     .then((r) => r.json()).then((r) => setUser(r) )
   }, [])
+
+  console.log("main user", user)
 
   return (
     <>

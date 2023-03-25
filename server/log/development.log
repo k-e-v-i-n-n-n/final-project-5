@@ -332,3 +332,1914 @@ Processing by UsersController#create as */*
 Completed 422 Unprocessable Entity in 22ms (Views: 0.6ms | ActiveRecord: 6.4ms | Allocations: 3544)
 
 
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:17:55 -0700
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:17:55 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 21ms (Views: 0.8ms | ActiveRecord: 4.4ms | Allocations: 27221)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 33ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 29916)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:18:35 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 754)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:18:35 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 754)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:18:38 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000012f547d08>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 422 Unprocessable Entity in 56ms (Views: 0.3ms | ActiveRecord: 11.1ms | Allocations: 21352)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:20:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 734)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:20:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 754)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:20:30 -0700
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000138b4f4b8>, params: {"controller"=>"users", "action"=>"create", "user"=>{}} }[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 24ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 3543)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:22:19 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"k", "user"=>{"username"=>"k"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000138b7d9f8>, params: {"username"=>"k", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"k"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "k"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "k"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.09ms)
+Completed 422 Unprocessable Entity in 10ms (Views: 0.5ms | ActiveRecord: 3.4ms | Allocations: 3169)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:22:24 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"", "password"=>"[FILTERED]", "user"=>{"username"=>""}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000139024100>, params: {"username"=>"", "password"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>""}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 422 Unprocessable Entity in 276ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 3191)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:22:39 -0700
+  
+ActionController::RoutingError (uninitialized constant SessionsController
+Did you mean?  SessionController):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:22:46 -0700
+  
+ActionController::RoutingError (uninitialized constant SessionsController
+Did you mean?  SessionController):
+  
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:26:59 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"username"=>"x"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000012e031c20>, params: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"x"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (2.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "x"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-24 18:27:00.098552"], ["updated_at", "2023-03-24 18:27:00.098552"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "x"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 3.6ms | Allocations: 3446)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/users_controller.rb:6:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:12 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 9ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 733)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:12 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms | Allocations: 734)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:12 -0700
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:12 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+Processing by UsersController#show as */*
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 2145)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 13ms (Views: 0.2ms | ActiveRecord: 7.7ms | Allocations: 4082)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:16 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 734)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:28:16 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 734)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 11:28:45 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"username"=>"x"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000139077f80>, params: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"x"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 422 Unprocessable Entity in 272ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 3284)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:28:52 -0700
+  
+ActionController::RoutingError (uninitialized constant SessionsController
+Did you mean?  SessionController):
+  
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:32:31 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 263ms (ActiveRecord: 9.7ms | Allocations: 5985)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/session_controller.rb:6:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:32:37 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 4ms (Views: 0.7ms | ActiveRecord: 0.3ms | Allocations: 835)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:32:37 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 734)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:32:43 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 272ms (ActiveRecord: 0.6ms | Allocations: 571)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/session_controller.rb:6:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:42:06 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 14ms (Views: 0.3ms | ActiveRecord: 7.0ms | Allocations: 7701)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:42:06 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 734)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:42:10 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.6ms | Allocations: 1662)
+
+
+  
+ActionDispatch::Request::Session::DisabledSessionError (Your application has sessions disabled. To write to the session you must first configure a session store):
+  
+app/controllers/session_controller.rb:6:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:44:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 401 Unauthorized in 18ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 25666)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:44:01 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 810)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 11:44:07 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.32ms)
+Completed 201 Created in 289ms (Views: 1.1ms | ActiveRecord: 5.6ms | Allocations: 15847)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:58:02 -0700
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:58:02 -0700
+Processing by UsersController#show as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.02ms)
+Completed 401 Unauthorized in 22ms (Views: 0.8ms | ActiveRecord: 8.8ms | Allocations: 7773)
+
+
+Completed 401 Unauthorized in 20ms (Views: 0.4ms | ActiveRecord: 7.8ms | Allocations: 6359)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:58:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 941)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:58:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.11ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 834)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:59:48 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms | Allocations: 840)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 11:59:48 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.4ms | Allocations: 840)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:02:12 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.11ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 827)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:02:12 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 844)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:06:58 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 8.4ms | Allocations: 6433)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:06:59 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 832)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:11:47 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 834)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:11:47 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 834)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:11:48 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 1ms (ActiveRecord: 0.2ms | Allocations: 630)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:12:50 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 201 Created in 273ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 973)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:12:52 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.3ms | Allocations: 606)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:13:26 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.19ms)
+Completed 201 Created in 277ms (Views: 0.6ms | ActiveRecord: 1.1ms | Allocations: 861)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:18:12 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.4ms | Allocations: 618)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:18:17 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 201 Created in 275ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 867)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:18:25 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 0.4ms | Allocations: 612)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:18:30 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.24ms)
+Completed 201 Created in 277ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 868)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:18:35 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 0.5ms | Allocations: 604)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:19:10 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 201 Created in 274ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 871)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:19:18 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 840)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:19:18 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.11ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 840)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:19:20 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.4ms | Allocations: 614)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:19:25 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 201 Created in 278ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 877)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:19:28 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 0.9ms | Allocations: 616)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:20:43 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.36ms)
+Completed 201 Created in 273ms (Views: 1.0ms | ActiveRecord: 1.7ms | Allocations: 875)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:21:58 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.5ms | Allocations: 610)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:22:02 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.29ms)
+Completed 201 Created in 275ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 871)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:23:40 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:23:40 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 838)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:24:16 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 0.4ms | Allocations: 608)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 896)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 863)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:28 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 883)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:28 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 883)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:24:29 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 401 Unauthorized in 4ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 875)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:24:33 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.21ms)
+Completed 201 Created in 276ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 862)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:45 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 836)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:24:45 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 836)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:24:47 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 0.4ms | Allocations: 622)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:25:56 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 201 Created in 276ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 862)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:26:12 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.4ms | Allocations: 610)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:26:15 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.31ms)
+Completed 201 Created in 278ms (Views: 0.9ms | ActiveRecord: 0.9ms | Allocations: 871)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:54:05 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 20ms (ActiveRecord: 6.9ms | Allocations: 3565)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 12:54:13 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"kevinnnnnnn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"username"=>"kevinnnnnnn"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000001261ef330>, params: {"username"=>"kevinnnnnnn", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"kevinnnnnnn"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "kevinnnnnnn"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (0.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "kevinnnnnnn"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-24 19:54:13.765750"], ["updated_at", "2023-03-24 19:54:13.765750"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "kevinnnnnnn"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.07ms)
+Completed 201 Created in 280ms (Views: 0.3ms | ActiveRecord: 4.9ms | Allocations: 4128)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:54:38 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 834)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 12:54:38 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 834)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:55:01 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.6ms | Allocations: 618)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:55:15 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.31ms)
+Completed 201 Created in 276ms (Views: 0.8ms | ActiveRecord: 0.5ms | Allocations: 872)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 12:56:06 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 1.0ms | Allocations: 610)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 12:56:48 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 201 Created in 275ms (Views: 0.9ms | ActiveRecord: 0.6ms | Allocations: 875)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:33:52 -0700
+Processing by UsersController#show as */*
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:33:52 -0700
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:33:52 -0700
+Processing by UsersController#show as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 12.0ms | Allocations: 8978)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+Completed 401 Unauthorized in 19ms (Views: 0.5ms | ActiveRecord: 8.8ms | Allocations: 10355)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 19ms (Views: 0.4ms | ActiveRecord: 11.1ms | Allocations: 9219)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:33:52 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 839)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:34:09 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:34:09 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:50:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 5.4ms | Allocations: 3752)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 13:50:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 848)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:04 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.35ms)
+Completed 200 OK in 34ms (Views: 0.9ms | ActiveRecord: 15.5ms | Allocations: 3733)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:05 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 830)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 824)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 825)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 832)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:36:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 832)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:58:08 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 10.5ms | Allocations: 3739)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:58:08 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 836)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:15 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 832)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:15 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 832)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:56 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:56 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 834)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 16:59:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.18ms)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 834)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:00:58 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 842)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:00:58 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 842)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:16:14 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 6.5ms | Allocations: 3731)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:16:14 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 828)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:21:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 836)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:21:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 836)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:22:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.42ms)
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.8ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:22:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:29:44 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 3743)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 17:29:44 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 840)
+
+
+Started GET "/expressions" for ::1 at 2023-03-24 19:39:38 -0700
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ExpressionsController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/favicon.ico" for ::1 at 2023-03-24 19:39:38 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/expressions" for ::1 at 2023-03-24 19:40:42 -0700
+Processing by ExpressionsController#index as HTML
+Completed 500 Internal Server Error in 6ms (Allocations: 2232)
+
+
+  
+NameError (undefined local variable or method `expressions' for #<ExpressionsController:0x00000000015900>
+Did you mean?  expressions_url):
+  
+app/controllers/expressions_controller.rb:4:in `index'
+Started GET "/expressions" for ::1 at 2023-03-24 19:40:54 -0700
+Processing by ExpressionsController#index as HTML
+  [1m[36mExpression Load (1.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions"[0m
+  ↳ app/controllers/expressions_controller.rb:5:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.18ms)
+Completed 200 OK in 32ms (Views: 25.4ms | ActiveRecord: 8.2ms | Allocations: 9014)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 19:44:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 17ms (Views: 0.5ms | ActiveRecord: 12.6ms | Allocations: 6488)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 19:44:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 838)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:45:48 -0700
+Error occurred while parsing request parameters.
+Contents:
+
+[object Object]
+Processing by ExpressionsController#create as */*
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 123)
+
+
+  
+ActionDispatch::Http::Parameters::ParseError (Error occurred while parsing request parameters):
+  
+app/controllers/expressions_controller.rb:26:in `expression_params'
+app/controllers/expressions_controller.rb:11:in `create'
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:50:21 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"ça ne casse pas trois pattes à un canard", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"ça ne casse pas trois pattes à un canard"}}
+[31mUnpermitted parameters: :type, :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x00000001251ff4e8>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"ça ne casse pas trois pattes à un canard", "type"=>"expression", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"ça ne casse pas trois pattes à un canard"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 40ms (Views: 0.6ms | ActiveRecord: 17.7ms | Allocations: 21001)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:52:01 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}}
+[31mUnpermitted parameters: :type, :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000011427f460>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}} }[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.15ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 1365)
+
+
+Started GET "/users" for ::1 at 2023-03-24 19:52:28 -0700
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for UsersController):
+  
+actionpack (7.0.4.3) lib/abstract_controller/base.rb:146:in `process'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.3) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.3) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.4) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+rack (2.2.6.4) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.4) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.6.4) lib/rack/head.rb:12:in `call'
+activerecord (7.0.4.3) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.3) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.3) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.3) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.3) lib/rails/rack/logger.rb:25:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.4) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.4) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.3) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.3) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:54:48 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 7ms (Views: 0.5ms | ActiveRecord: 5.1ms | Allocations: 5124)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 19:55:00 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 0.9ms | Allocations: 1711)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 19:55:03 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 201 Created in 278ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 1118)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:55:10 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 903)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:55:27 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 7ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 5017)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:55:31 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "source"=>"fr"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 5ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 901)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 19:55:36 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2058)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 19:55:36 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.15ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 838)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 19:55:38 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.5ms | Allocations: 617)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 19:55:40 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.35ms)
+Completed 201 Created in 275ms (Views: 1.0ms | ActiveRecord: 0.6ms | Allocations: 984)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:56:06 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 907)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:56:35 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 404 Not Found in 10ms (Views: 0.6ms | ActiveRecord: 8.1ms | Allocations: 5025)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:57:12 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 404 Not Found in 10ms (Views: 0.5ms | ActiveRecord: 7.8ms | Allocations: 5016)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:58:30 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.05ms)
+Completed 404 Not Found in 9ms (Views: 0.4ms | ActiveRecord: 6.9ms | Allocations: 5012)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:59:08 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 4ms (Views: 1.0ms | ActiveRecord: 0.3ms | Allocations: 909)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:59:16 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 7ms (Views: 1.3ms | ActiveRecord: 0.4ms | Allocations: 911)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 19:59:53 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.14ms)
+Completed 404 Not Found in 7ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 897)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:01:11 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameters: :type, :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000013617f548>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr", "type"=>"expression", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "source"=>"fr"}} }[0m
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 8.3ms | Allocations: 11478)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:03:27 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x0000000107925d80>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en", "type"=>"expression", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 10.8ms | Allocations: 7526)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'type' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:11:39 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "type"=>"expression", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameters: :type, :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x0000000135ec1928>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "type"=>"expression", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 9.2ms | Allocations: 7442)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWordJoinsExpressions (20230320183430)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.4ms)[0m  [1m[35mDROP TABLE "word_joins_expressions"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230320183430"]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStars (20230320183421)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE "stars"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230320183421"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWords (20230320183410)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "words"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230320183410"]]
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateExpressions (20230320183400)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE "expressions"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230320183400"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230320182715)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230320182715"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230320182715)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230320182715"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateExpressions (20230320183400)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "expressions" ("id" bigserial primary key, "french" character varying, "english" character varying, "target" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230320183400"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWords (20230320183410)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "words" ("id" bigserial primary key, "french" character varying, "english" character varying, "target" character varying, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230320183410"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateStars (20230320183421)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateLists (20230320183421)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "lists" ("id" bigserial primary key, "word_id" integer, "category" integer, "user_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230320183421"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWordsJoinsExpressions (20230320183430)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateWordsJoinsLists (20230320183430)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE TABLE "words_joins_lists" ("id" bigserial primary key, "list_id" integer, "word_id" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230320183430"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6147559749703312605)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:28:57 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 4872)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 20:30:34 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 401 Unauthorized in 4ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 758)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 20:30:40 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"y", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"username"=>"y"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x000000012705f348>, params: {"username"=>"y", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"y"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "y"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-25 03:30:40.733216"], ["updated_at", "2023-03-25 03:30:40.733216"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "y"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 201 Created in 267ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 5079)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:31:24 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000013624bcb0>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 2497)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started GET "/expressions" for ::1 at 2023-03-24 20:38:20 -0700
+Processing by ExpressionsController#index as HTML
+  [1m[36mExpression Load (0.6ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions"[0m
+  ↳ app/controllers/expressions_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.04ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 9.4ms | Allocations: 6296)
+
+
+Started GET "/expression" for ::1 at 2023-03-24 20:38:24 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/expression"):
+  
+Started GET "/expressions" for ::1 at 2023-03-24 20:38:28 -0700
+Processing by ExpressionsController#index as HTML
+  [1m[36mExpression Load (0.6ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions"[0m
+  ↳ app/controllers/expressions_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.6ms | Allocations: 751)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:39:44 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x0000000124d429c8>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.6ms | Allocations: 8847)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:40:54 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000010794fab8>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms | Allocations: 1037)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:41:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 1037)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:41:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 832)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:42:25 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x0000000127129b98>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"", "target"=>"en"}} }[0m
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.5ms | Allocations: 1040)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'user_id' for Expression.):
+  
+app/controllers/expressions_controller.rb:13:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:46:59 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.33ms)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.3ms | Allocations: 835)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:46:59 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.28ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 836)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:50:50 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 31ms (Views: 1.6ms | ActiveRecord: 6.3ms | Allocations: 40696)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 20:50:50 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 848)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 20:50:55 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.7ms | Allocations: 647)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 20:50:59 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"y", "password"=>"[FILTERED]", "session"=>{"username"=>"y", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "y"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.26ms)
+Completed 201 Created in 272ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 998)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:51:05 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"", "english"=>"test", "target"=>"fr", "expression"=>{"french"=>"", "english"=>"test", "target"=>"fr"}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000010ac1d288>, params: {"french"=>"", "english"=>"test", "target"=>"fr", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"", "english"=>"test", "target"=>"fr"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+  [1m[36mExpression Create (0.9ms)[0m  [1m[32mINSERT INTO "expressions" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", ""], ["english", "test"], ["target", "fr"], ["user_id", 1], ["created_at", "2023-03-25 03:51:05.536315"], ["updated_at", "2023-03-25 03:51:05.536315"]]
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Expression (0.14ms)
+Completed 201 Created in 36ms (Views: 0.5ms | ActiveRecord: 6.0ms | Allocations: 21542)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 20:51:23 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.5ms | Allocations: 622)
+
+
+Started POST "/signup" for 127.0.0.1 at 2023-03-24 20:51:28 -0700
+Processing by UsersController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "user"=>{"username"=>"x"}}
+[31mUnpermitted parameter: :user. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000107024808>, params: {"username"=>"x", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "controller"=>"users", "action"=>"create", "user"=>{"username"=>"x"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "x"], ["password_digest", "[FILTERED]"], ["created_at", "2023-03-25 03:51:28.317422"], ["updated_at", "2023-03-25 03:51:28.317422"]]
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:4:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "x"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:5:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.07ms)
+Completed 201 Created in 274ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 3992)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 20:51:53 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000010702ff78>, params: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"It's nothing to write home about", "target"=>"en"}} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+  [1m[36mExpression Create (0.9ms)[0m  [1m[32mINSERT INTO "expressions" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", "ça ne casse pas trois pattes à un canard"], ["english", "It's nothing to write home about"], ["target", "en"], ["user_id", 2], ["created_at", "2023-03-25 03:51:53.516542"], ["updated_at", "2023-03-25 03:51:53.516542"]]
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expressions_controller.rb:13:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Expression (0.21ms)
+Completed 201 Created in 12ms (Views: 0.6ms | ActiveRecord: 2.2ms | Allocations: 2958)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:22:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 5.0ms | Allocations: 9101)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:22:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.11ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 838)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 21:22:20 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.7ms | Allocations: 623)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 21:22:25 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.14ms)
+Completed 201 Created in 275ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 971)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:23:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.55ms)
+Completed 200 OK in 4ms (Views: 1.1ms | ActiveRecord: 0.3ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:23:46 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 838)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:25:16 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 6.9ms | Allocations: 6334)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:25:16 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms | Allocations: 830)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:25:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.27ms)
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.2ms | Allocations: 842)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:25:26 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.16ms)
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 842)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:38:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 5.1ms | Allocations: 8986)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:38:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.12ms)
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 832)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2023-03-24 21:38:13 -0700
+Processing by SessionController#destroy as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:14:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 0.6ms | Allocations: 617)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-24 21:38:18 -0700
+Processing by SessionController#create as */*
+  Parameters: {"username"=>"x", "password"=>"[FILTERED]", "session"=>{"username"=>"x", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "x"], ["LIMIT", 1]]
+  ↳ app/controllers/session_controller.rb:4:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.17ms)
+Completed 201 Created in 272ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 979)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:41:31 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 7.4ms | Allocations: 6344)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:41:31 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with User (0.13ms)
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 840)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:43:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.5ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (25.74ms)
+Completed 200 OK in 64ms (Views: 28.9ms | ActiveRecord: 11.7ms | Allocations: 66557)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:43:11 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.03ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 1856)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:45:29 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.73ms)
+Completed 200 OK in 16ms (Views: 4.6ms | ActiveRecord: 7.3ms | Allocations: 11253)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:45:29 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.03ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 1893)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:48:19 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.85ms)
+Completed 200 OK in 7ms (Views: 2.1ms | ActiveRecord: 2.4ms | Allocations: 1879)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:48:19 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.09ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1879)
+
+
+Started POST "/expressions" for 127.0.0.1 at 2023-03-24 21:50:47 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"poser un lapin", "english"=>"To stand someone up", "target"=>"en", "expression"=>{"french"=>"poser un lapin", "english"=>"To stand someone up", "target"=>"en"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :expression. Context: { controller: ExpressionsController, action: create, request: #<ActionDispatch::Request:0x000000013383f4d0>, params: {"french"=>"poser un lapin", "english"=>"To stand someone up", "target"=>"en", "controller"=>"expressions", "action"=>"create", "expression"=>{"french"=>"poser un lapin", "english"=>"To stand someone up", "target"=>"en"}} }[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+  [1m[36mExpression Create (1.0ms)[0m  [1m[32mINSERT INTO "expressions" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", "poser un lapin"], ["english", "To stand someone up"], ["target", "en"], ["user_id", 2], ["created_at", "2023-03-25 04:50:47.534006"], ["updated_at", "2023-03-25 04:50:47.534006"]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ExpressionSerializer with ActiveModelSerializers::Adapter::Attributes (0.26ms)
+Completed 201 Created in 9ms (Views: 0.8ms | ActiveRecord: 2.3ms | Allocations: 3153)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:51:03 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (3.8ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.41ms)
+Completed 200 OK in 11ms (Views: 4.2ms | ActiveRecord: 4.0ms | Allocations: 2009)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-24 21:51:03 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (1.01ms)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 2009)
+
+

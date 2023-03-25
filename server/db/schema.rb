@@ -17,14 +17,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_183430) do
   create_table "expressions", force: :cascade do |t|
     t.string "french"
     t.string "english"
-    t.string "source"
     t.string "target"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "stars", force: :cascade do |t|
+  create_table "lists", force: :cascade do |t|
     t.integer "word_id"
+    t.integer "category"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -36,18 +38,18 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_20_183430) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "word_joins_expressions", force: :cascade do |t|
-    t.integer "expression_id"
-    t.integer "word_id"
+  create_table "words", force: :cascade do |t|
+    t.string "french"
+    t.string "english"
+    t.string "target"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "words", force: :cascade do |t|
-    t.string "french"
-    t.string "english"
-    t.string "source"
-    t.string "target"
+  create_table "words_joins_lists", force: :cascade do |t|
+    t.integer "list_id"
+    t.integer "word_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

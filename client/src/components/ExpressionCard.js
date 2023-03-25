@@ -1,13 +1,13 @@
-function ExpressionCard() {
+function ExpressionCard({expression}) {
 
-
+console.log("expression", expression.french)
   return (
     <div className="target-expression-container" >
         <p className="target-expression-text">
-          ça ne casse trois pattes à un canard...
+          {expression.french}
         </p>
         <p className="source-expression-text">
-          it's not that great....
+          {expression.english}
         </p>
     </div>
   )

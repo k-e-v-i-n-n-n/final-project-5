@@ -3,5 +3,5 @@ class User < ApplicationRecord
     validates :username, presence: true, uniqueness: true
     has_many :words
     has_many :expressions
-    has_many :stars
+    has_many :lists
 end

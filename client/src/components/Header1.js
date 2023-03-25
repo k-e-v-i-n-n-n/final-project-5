@@ -1,9 +1,27 @@
-import React from "react"
-import {Link} from "react-router-dom"
+import {React, useContext} from "react"
+import {Link, useNavigate} from "react-router-dom"
+import { AppContext } from "../Context"
 import avatar from "../images/avatar.png"
 
 
 function Header1() {
+  const {user, setUser} = useContext(AppContext)
+  const navigate = useNavigate()
+
+  const loggedIn = <p className="login-text" id ="logged-in-text">Bonjour, {user.username}</p> 
+                      
+                 
+
+  const loggedOut = <> <Link to="/login">
+                          <div className="login-text">login</div>
+                        </Link> </>
+
+function logOut() {
+  fetch("/logout",{
+      method:"DELETE"
+  })
+  .then(() => {setUser(""); navigate("/login") })
+}
 
 
   return (
@@ -20,13 +38,17 @@ function Header1() {
         </div>
       </div>
       <div className="login-icon-container">
-        <Link to="/login">
-          <div className="login-text">login</div>
-        </Link>
+      <div className="logged-in-or-out" >
+      {user? loggedIn : loggedOut}
+      </div>
+      <div className="avatar-container" >
           <img className="avatar" src={avatar}/>
-     
-
+          {user && <button className="login-text" id="logout" onClick={logOut}>logout</button>}
+          
+      </div>
+      
         </div>
+        <div id="right-side-invisible"></div>
     </div>
   );
 }
