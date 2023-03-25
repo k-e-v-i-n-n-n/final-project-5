@@ -1,3 +1,5 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :id, :List, :Expression
+  attributes :id, :french, :english, :target
+  belongs_to :user
+ 
 end

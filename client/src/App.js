@@ -15,6 +15,8 @@ function App() {
   const {translationObject, setTranslationObject, sourceLang, targetLang, user, setUser} = useContext(AppContext)
   const sourceText = translationObject[sourceLang]
 
+  console.log("user", user)
+
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
     const response = await axios.get('http://localhost:8000/translate', {params : data})
@@ -23,10 +25,14 @@ function App() {
 
   useEffect(() =>{
     fetch("/me")
-    .then((r) => r.json()).then((r) => setUser(r) )
-  }, [])
+    .then((r) =>{
+      if(r.ok)
+      {r.json().then((r) => setUser(r))}
+      else
+      {{console.log("/me says", r);}}
 
-  console.log("main user", user)
+    })
+  }, [])
 
   return (
     <>
@@ -39,7 +45,6 @@ function App() {
           <Route path="/lists" element={<Lists/>}/>
           <Route path="/login" element={<Login/>}/>
         </Routes>
-
     </> 
   )
 }

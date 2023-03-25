@@ -1,13 +1,13 @@
-const WordCard = () => {
+const WordCard = ({word}) => {
 
 
     return (
       <div className="target-expression-container" >
           <p className="target-expression-text">
-            génial
+            {word.french}
           </p>
           <p className="source-expression-text">
-           great
+           {word.english}
           </p>
       </div>
     )

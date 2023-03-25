@@ -8,10 +8,8 @@ function Header1() {
   const {user, setUser} = useContext(AppContext)
   const navigate = useNavigate()
 
-  const loggedIn = <p className="login-text" id ="logged-in-text">Bonjour, {user.username}</p> 
+  const loggedIn = <p className="login-text" id ="logged-in-text">Bonjour, {user?.username}</p> 
                       
-                 
-
   const loggedOut = <> <Link to="/login">
                           <div className="login-text">login</div>
                         </Link> </>

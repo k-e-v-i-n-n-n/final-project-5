@@ -7,14 +7,11 @@ const Expressions = () => {
 const {user} = useContext(AppContext)
 
 const expressionMap = user?.expressions.map((expression) => (<ExpressionCard id={expression.id} expression={expression}/>))
-    return(
-
+    
+return(
         <div className="expressions-page">
             <div className="expressions-page-container">
-                
                 {expressionMap}
-             
-                
             </div>
         </div>
     )

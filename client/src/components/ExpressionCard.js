@@ -1,6 +1,5 @@
 function ExpressionCard({expression}) {
 
-console.log("expression", expression.french)
   return (
     <div className="target-expression-container" >
         <p className="target-expression-text">
