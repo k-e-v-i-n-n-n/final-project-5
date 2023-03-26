@@ -18,7 +18,7 @@ const ExpressionCard = ({expression}) => {
   }
       
 
-git 
+
 
   return (
     <div className="expression-container" >

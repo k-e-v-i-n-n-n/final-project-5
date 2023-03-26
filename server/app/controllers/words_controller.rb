@@ -12,6 +12,12 @@ rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
         word = user.words.create!(word_params)
         render json: word, status: :created
     end
+
+    def destroy
+        word = Word.find(params[:id])
+        word.delete
+        head :no_content
+    end
     
     private
 
