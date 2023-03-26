@@ -13,6 +13,12 @@ class ExpressionsController < ApplicationController
         render json: expression, status: :created
     end
 
+    def destroy
+        expression = Expression.find(params[:id])
+        expression.delete
+        head :no_content
+    end
+
     private
 
     def unprocessable(invalid)

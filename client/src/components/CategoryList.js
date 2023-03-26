@@ -1,12 +1,12 @@
-const CategoryList = () => {
+const CategoryList = ({setShowModal}) => {
 
 
     return(
     <>
     
          <div className="category-title-container" >
-            <p>Choose from your categories to show your list.</p>
-            {/* <p style={{fontSize: 10}}>  Add new categories when you save a word.</p> */}
+            <div className="categories-title" >Categories</div>
+            <button className="add-new-button" onClick={() => setShowModal(true)} >add new</button>
          </div>
         
     </>
