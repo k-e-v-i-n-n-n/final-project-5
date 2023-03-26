@@ -3,6 +3,7 @@ import { AppContext } from "../Context"
 
 const Modal = ({setSaveMode}) => {
 const {targetLang, sourceLang, translationObject, setTranslationObject} = useContext(AppContext)
+const {user, setUser} = useContext(AppContext)
 
 const [langOne, setLangOne] = useState()
 const [langTwo, setLangTwo] = useState()
@@ -23,7 +24,6 @@ else{
     {path = "expressions"}
     else {path = "words"}
 
-    
     fetch(`/${path}`, {
         method:"POST",
         headers: {"Content-Type":"application/json"},
@@ -32,7 +32,16 @@ else{
             english: translationObject["en"],
             target: targetLang,
             })})
-        .then((r) => r.json()).then((r) =>{console.log("res", r); setSaveMode(null)})}}
+        .then((r) => r.json()).then((r) =>{console.log("res", r); setSaveMode(null);updateState(r, path) })}}
+
+   
+
+function updateState(r, path) {
+    const userArr = user[path]
+    userArr.push(r)
+    const updatedUser = {...user, [path]: userArr}
+    setUser(updatedUser)
+}
 
 function popObject(e){
     setTranslationObject({...translationObject, [e.target.name]: e.target.value})
