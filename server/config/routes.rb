@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :lists
+  resources :categories
   resources :word_joins_expressions
   resources :stars
   resources :words

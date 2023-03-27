@@ -1,2 +1,0 @@
-class WordJoinsExpression < ApplicationRecord
-end

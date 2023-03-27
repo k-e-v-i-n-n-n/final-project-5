@@ -1,18 +1,50 @@
+import { useContext, useState } from "react"
+import { AppContext } from "../Context"
+
 const CategoryModal = ({setShowModal}) => {
+    const {user, setUser} = useContext(AppContext)
+
+    const [wordCat, setWordCat] = useState()
+    const [expCat, setExpCat] = useState()  
+    const [isActive1, setIsActive1] = useState(false)
+    const [isActive2, setIsActive2] = useState(false)
+
+    function activate(e){
+    if(e.target.value != "")
+    {setIsActive1(true); setIsActive2(false)}
+    else {setIsActive1(false); setIsActive2(true)}}
+
+    function activate2(e){
+        if(e.target.value != "")
+        {setIsActive1(false); setIsActive2(true)}
+        else {setIsActive1(true); setIsActive2(false)}}
+
+    const expMap = user.expressions.map((exp) => <option value={exp.french} disabled={isActive1}>{exp.french}</option>)
+    const wordMap = user.words.map((word) => <option value={word.french} disabled={isActive2}>{word.french}</option>)
+
+   
+
+
 
     return(
 <div className="overlay">
         <div className="add-category-container">
             <label className="modal-label">Category</label>
             <input className="modal-input"  />
-            <label className="modal-label">Word</label>
-            <select className="modal-input">
-                <option></option>
-            </select>
-            <label className="modal-label">Expression</label>
-            <select className="modal-input">
-                <option></option>
-            </select>
+            
+            <p>Select one of the following</p>
+            <div className="category-type-container" >
+                 <label className="modal-label">Word</label>
+                <select value={wordCat} className="modal-input" onChange={(e) => {setWordCat(e.target.value); activate(e);  console.log("word", e)}}>
+                    <option value="" defaultValue >-Select Word-</option>
+                    {wordMap}
+                    </select>
+                <label className="modal-label">Expression</label>
+                <select value={expCat} className="modal-input" onChange={(e) => {setExpCat(e.target.value);activate2(e)}}>
+                <option value="" defaultValue >-Select Expresion-</option>
+                    {expMap}
+                </select>
+            </div>
 
             <div className="modal-button-container">
                 <button id="modal-save"  >save</button>

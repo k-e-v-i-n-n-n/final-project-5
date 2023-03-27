@@ -1,2 +1,0 @@
-class StarsController < ApplicationController
-end
