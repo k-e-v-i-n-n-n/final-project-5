@@ -1,5 +1,5 @@
 class CategorySerializer < ActiveModel::Serializer
   attributes :id
+  attributes :id
   belongs_to :user
-  has_many :words
 end

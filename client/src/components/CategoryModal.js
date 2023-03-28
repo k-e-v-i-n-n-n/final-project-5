@@ -6,6 +6,7 @@ const CategoryModal = ({setShowModal}) => {
 
     const [wordCat, setWordCat] = useState()
     const [expCat, setExpCat] = useState()  
+    const [cat, setCat] = useState()
     const [isActive1, setIsActive1] = useState(false)
     const [isActive2, setIsActive2] = useState(false)
 
@@ -22,6 +23,27 @@ const CategoryModal = ({setShowModal}) => {
     const expMap = user.expressions.map((exp) => <option value={exp.french} disabled={isActive1}>{exp.french}</option>)
     const wordMap = user.words.map((word) => <option value={word.french} disabled={isActive2}>{word.french}</option>)
 
+   function makeList(e){
+    e.preventDefault()
+
+    let key
+    let value
+    if(wordCat != ""){key = "word"; value = wordCat}
+    else if (expCat != "")
+    {key = "expression"; value = expCat}
+
+    fetch("/lists",{
+        method:"POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+        [key]: value,
+        categories_attributes: [cat]
+
+
+    })})
+    .then((r) => r.json()).then((r) => console.log("cat r", r))
+
+}
    
 
 
@@ -47,7 +69,7 @@ const CategoryModal = ({setShowModal}) => {
             </div>
 
             <div className="modal-button-container">
-                <button id="modal-save"  >save</button>
+                <button id="modal-save" onClick={(e) => makeList(e)}>save</button>
                 <button id="modal-cancel" onClick={() => setShowModal(false)}>cancel</button>
             </div>
 

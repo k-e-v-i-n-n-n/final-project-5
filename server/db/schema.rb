@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_27_225649) do
+ActiveRecord::Schema.define(version: 2023_03_28_220309) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.integer "category"
+    t.string "category"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "expressions", force: :cascade do |t|
@@ -26,8 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_225649) do
     t.string "english"
     t.string "target"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "lists", force: :cascade do |t|
@@ -35,15 +36,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_225649) do
     t.integer "word_id"
     t.integer "expression_id"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "words", force: :cascade do |t|
@@ -51,8 +52,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_27_225649) do
     t.string "english"
     t.string "target"
     t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

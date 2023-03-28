@@ -3,8 +3,8 @@ class CategoriesController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
 
     def create
-        user = User.find(session[:user_id])
-        category = user.categories.create(category_params)
+        user = User.find_by(id: session[:user_id])
+        category = user.categories.find_or_create_by(category_params)
     end
 
     private

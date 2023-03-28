@@ -4,4 +4,5 @@ class User < ApplicationRecord
     has_many :words
     has_many :expressions
     has_many :lists
+    has_many :categories
 end
