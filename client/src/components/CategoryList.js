@@ -6,7 +6,7 @@ const CategoryList = ({setShowModal}) => {
     
          <div className="category-title-container" >
             <div className="categories-title" >Categories</div>
-            <button className="add-new-button" onClick={() => setShowModal(true)} >add new</button>
+            <button className="add-new-button" onClick={() => setShowModal(true)} >add new category</button>
          </div>
         
     </>

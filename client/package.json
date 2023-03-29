@@ -22,7 +22,6 @@
   },
   "scripts": {
     "start": "PORT=4000 react-scripts start",
-    "translator": "nodemon translate_server.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

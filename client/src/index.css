@@ -324,6 +324,17 @@ a {
   margin:14px;
 }
 
+.login-greeting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+
+  /* width: 100px;
+  height: 100px; */
+  margin: 60px;
+}
+
 /* ********************************************* Translate Page */
 
 .translate-page{
@@ -448,6 +459,7 @@ textarea:disabled{
 .modal-label{
 
   font-weight: 700px;
+  margin: 12px;
 }
 
 .modal-button-container{
@@ -599,13 +611,14 @@ textarea:disabled{
 
 .category-card-container{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 60px;
   width: 140px;
 
   border: .3px solid black;
-  border-radius: .3px;
+  border-radius: 3px;
 }
 
 .categories-title{
@@ -645,4 +658,24 @@ textarea:disabled{
   border-radius: 3px;
 }
 
+.category-card-container:hover .category-delete-x{
+  visibility: visible;
+}
+
+.category-delete-x{
+  font-size: 8px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  visibility: hidden;
+  border: .3px solid black;
+  border-radius: 5px;
+  background: rgb(255, 255, 254);
+  /* width: 8px;
+  height: 8px; */
+  box-sizing: border-box;
+
+  top: 13px;
+  left: 58px;
+}
 

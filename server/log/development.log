@@ -388,3 +388,981 @@ Processing by ExpressionsController#create as */*
 Completed 201 Created in 21ms (Views: 2.9ms | ActiveRecord: 4.7ms | Allocations: 6654)
 
 
+Started POST "/expressions" for 127.0.0.1 at 2023-03-28 16:50:50 -0700
+Processing by ExpressionsController#create as */*
+  Parameters: {"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"it's not that great", "target"=>"fr", "expression"=>{"french"=>"ça ne casse pas trois pattes à un canard", "english"=>"it's not that great", "target"=>"fr"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/expressions_controller.rb:11:in `create'
+[31mUnpermitted parameter: :expression[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+  [1m[36mExpression Create (1.3ms)[0m  [1m[32mINSERT INTO "expressions" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", "ça ne casse pas trois pattes à un canard"], ["english", "it's not that great"], ["target", "fr"], ["user_id", 1], ["created_at", "2023-03-28 23:50:50.136908"], ["updated_at", "2023-03-28 23:50:50.136908"]]
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/expressions_controller.rb:12:in `create'
+[active_model_serializers] Rendered ExpressionSerializer with ActiveModelSerializers::Adapter::Attributes (0.86ms)
+Completed 201 Created in 18ms (Views: 1.6ms | ActiveRecord: 11.0ms | Allocations: 10645)
+
+
+Started POST "/words" for 127.0.0.1 at 2023-03-28 16:51:05 -0700
+Processing by WordsController#create as */*
+  Parameters: {"french"=>"examen", "english"=>"test", "target"=>"fr", "word"=>{"french"=>"examen", "english"=>"test", "target"=>"fr"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `create'
+[31mUnpermitted parameter: :word[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/words_controller.rb:12:in `create'
+  [1m[36mWord Create (1.2ms)[0m  [1m[32mINSERT INTO "words" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", "examen"], ["english", "test"], ["target", "fr"], ["user_id", 1], ["created_at", "2023-03-28 23:51:05.439196"], ["updated_at", "2023-03-28 23:51:05.439196"]]
+  ↳ app/controllers/words_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/words_controller.rb:12:in `create'
+[active_model_serializers] Rendered WordSerializer with ActiveModelSerializers::Adapter::Attributes (3.49ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 6.8ms | Allocations: 6785)
+
+
+  
+ArgumentError (No association found for name `categories'. Has it been defined yet?):
+  
+app/models/list.rb:3:in `<class:List>'
+app/models/list.rb:1:in `<main>'
+app/controllers/words_controller.rb:13:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-28 16:51:25 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (1.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (30.0ms)
+Completed 200 OK in 50ms (Views: 17.4ms | ActiveRecord: 19.2ms | Allocations: 25758)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 16:51:25 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.63ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.3ms | Allocations: 4919)
+
+
+Started POST "/words" for 127.0.0.1 at 2023-03-28 16:51:33 -0700
+Processing by WordsController#create as */*
+  Parameters: {"french"=>"oui", "english"=>"yes", "target"=>"fr", "word"=>{"french"=>"oui", "english"=>"yes", "target"=>"fr"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/words_controller.rb:11:in `create'
+[31mUnpermitted parameter: :word[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/words_controller.rb:12:in `create'
+  [1m[36mWord Create (0.7ms)[0m  [1m[32mINSERT INTO "words" ("french", "english", "target", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["french", "oui"], ["english", "yes"], ["target", "fr"], ["user_id", 1], ["created_at", "2023-03-28 23:51:33.074420"], ["updated_at", "2023-03-28 23:51:33.074420"]]
+  ↳ app/controllers/words_controller.rb:12:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/words_controller.rb:12:in `create'
+[active_model_serializers]   [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" INNER JOIN "lists" ON "categories"."id" = "lists"."category_id" WHERE "lists"."word_id" = $1[0m  [["word_id", 3]]
+[active_model_serializers]   ↳ app/controllers/words_controller.rb:13:in `create'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."word_id" = $1[0m  [["word_id", 3]]
+[active_model_serializers]   ↳ app/controllers/words_controller.rb:13:in `create'
+[active_model_serializers] Rendered WordSerializer with ActiveModelSerializers::Adapter::Attributes (12.49ms)
+Completed 201 Created in 27ms (Views: 10.0ms | ActiveRecord: 5.1ms | Allocations: 7016)
+
+
+Started POST "/lists" for 127.0.0.1 at 2023-03-28 17:05:35 -0700
+Processing by ListsController#create as */*
+  Parameters: {"word"=>"fou", "categories_attributes"=>[], "list"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `create'
+[31mUnpermitted parameters: :word, :list[0m
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 5.9ms | Allocations: 7519)
+
+
+  
+NoMethodError (undefined method `create' for #<User:0x000000013beac248>
+Did you mean?  created_at):
+  
+app/controllers/lists_controller.rb:7:in `block in create'
+app/controllers/lists_controller.rb:6:in `create'
+Started POST "/lists" for 127.0.0.1 at 2023-03-28 17:06:15 -0700
+Processing by ListsController#create as */*
+  Parameters: {"word"=>"fou", "categories_attributes"=>[], "list"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `create'
+[31mUnpermitted parameters: :word, :list[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/lists_controller.rb:7:in `block in create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/lists_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 9.4ms | Allocations: 8645)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'categories_attributes' for List.):
+  
+app/controllers/lists_controller.rb:7:in `block in create'
+app/controllers/lists_controller.rb:6:in `create'
+Started POST "/lists" for 127.0.0.1 at 2023-03-28 17:07:51 -0700
+Processing by ListsController#create as */*
+  Parameters: {"word"=>"fou", "categories_attributes"=>[], "list"=>{}}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/lists_controller.rb:4:in `create'
+[31mUnpermitted parameters: :word, :categories_attributes, :list[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/lists_controller.rb:7:in `block in create'
+[31mUnpermitted parameters: :word, :categories_attributes, :list[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/lists_controller.rb:6:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 17.7ms | Allocations: 12224)
+
+
+  
+TypeError (can't cast ActionController::Parameters):
+  
+app/controllers/lists_controller.rb:8:in `block in create'
+app/controllers/lists_controller.rb:6:in `create'
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:16:19 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.7ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.14ms)
+Completed 200 OK in 47ms (Views: 18.6ms | ActiveRecord: 17.9ms | Allocations: 25346)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:16:19 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.5ms)
+Completed 200 OK in 35ms (Views: 16.6ms | ActiveRecord: 9.0ms | Allocations: 24787)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:20:55 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.5ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.52ms)
+Completed 200 OK in 32ms (Views: 14.6ms | ActiveRecord: 6.6ms | Allocations: 24773)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:20:55 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.06ms)
+Completed 200 OK in 36ms (Views: 15.2ms | ActiveRecord: 11.4ms | Allocations: 25256)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:22:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.47ms)
+Completed 200 OK in 17ms (Views: 3.8ms | ActiveRecord: 6.8ms | Allocations: 8216)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:22:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.84ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 5021)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:23:27 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.9ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (1.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (9.69ms)
+Completed 200 OK in 14ms (Views: 7.2ms | ActiveRecord: 3.4ms | Allocations: 5027)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:23:27 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.34ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.6ms | Allocations: 5025)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (6.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (2.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.8ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (21.0ms)
+Completed 200 OK in 26ms (Views: 12.2ms | ActiveRecord: 10.2ms | Allocations: 5013)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.48ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 5013)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (13.45ms)
+Completed 200 OK in 20ms (Views: 13.5ms | ActiveRecord: 1.7ms | Allocations: 5029)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:57 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.23ms)
+Completed 200 OK in 5ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 5030)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:59 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (3.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (15.0ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.91ms)
+Completed 200 OK in 38ms (Views: 12.1ms | ActiveRecord: 18.8ms | Allocations: 5021)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:25:59 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.63ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 5022)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:26:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (7.0ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.8ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (12.23ms)
+Completed 200 OK in 19ms (Views: 4.7ms | ActiveRecord: 8.2ms | Allocations: 5019)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:26:02 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (3.64ms)
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.9ms | Allocations: 5019)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:30:24 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:16 -0700
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.5ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (28.54ms)
+Completed 200 OK in 52ms (Views: 19.1ms | ActiveRecord: 17.0ms | Allocations: 30181)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:17 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.26ms)
+Completed 200 OK in 40ms (Views: 14.9ms | ActiveRecord: 10.8ms | Allocations: 30181)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:28 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (7.99ms)
+Completed 200 OK in 13ms (Views: 7.5ms | ActiveRecord: 1.1ms | Allocations: 5044)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:28 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (27.26ms)
+Completed 200 OK in 49ms (Views: 16.8ms | ActiveRecord: 16.8ms | Allocations: 30169)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:29 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.8ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (10.79ms)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 2.0ms | Allocations: 5050)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:29 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.5ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.09ms)
+Completed 200 OK in 48ms (Views: 16.4ms | ActiveRecord: 16.4ms | Allocations: 30175)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:35 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.6ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.73ms)
+Completed 200 OK in 24ms (Views: 14.9ms | ActiveRecord: 2.5ms | Allocations: 5046)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 17:32:35 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (1.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.67ms)
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 1.8ms | Allocations: 5046)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 17:40:15 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>[]}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (1.7ms)[0m  [1m[32mINSERT INTO "categories" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2023-03-29 00:40:15.738703"], ["updated_at", "2023-03-29 00:40:15.738703"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 204 No Content in 40ms (ActiveRecord: 15.6ms | Allocations: 7929)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 17:40:46 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+[31mUnpermitted parameter: :category[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2023-03-29 00:40:46.856589"], ["updated_at", "2023-03-29 00:40:46.856589"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 204 No Content in 20ms (ActiveRecord: 15.6ms | Allocations: 4826)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 17:41:49 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Holidays"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Holidays"], ["user_id", 1], ["created_at", "2023-03-29 00:41:49.631450"], ["updated_at", "2023-03-29 00:41:49.631450"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 204 No Content in 15ms (ActiveRecord: 3.5ms | Allocations: 2625)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 17:44:30 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Holidays"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Holidays"], ["user_id", 1], ["created_at", "2023-03-29 00:44:30.429261"], ["updated_at", "2023-03-29 00:44:30.429261"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+Completed 204 No Content in 23ms (ActiveRecord: 14.1ms | Allocations: 9473)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 18:17:09 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Holidays"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Holidays"], ["user_id", 1], ["created_at", "2023-03-29 01:17:09.125376"], ["updated_at", "2023-03-29 01:17:09.125376"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (0.76ms)
+Completed 201 Created in 28ms (Views: 1.8ms | ActiveRecord: 12.3ms | Allocations: 13465)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:21:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.64ms)
+Completed 200 OK in 17ms (Views: 14.2ms | ActiveRecord: 1.9ms | Allocations: 15914)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:21:07 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (20.52ms)
+Completed 200 OK in 36ms (Views: 16.9ms | ActiveRecord: 9.9ms | Allocations: 27405)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:21:28 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.75ms)
+Completed 200 OK in 13ms (Views: 8.1ms | ActiveRecord: 1.7ms | Allocations: 5479)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:21:28 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (17.1ms)
+Completed 200 OK in 33ms (Views: 16.5ms | ActiveRecord: 6.5ms | Allocations: 27291)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:22:29 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.08ms)
+Completed 200 OK in 43ms (Views: 18.5ms | ActiveRecord: 20.1ms | Allocations: 25413)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:22:29 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.68ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.9ms | Allocations: 5507)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:22:31 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (31.36ms)
+Completed 200 OK in 47ms (Views: 18.5ms | ActiveRecord: 19.7ms | Allocations: 25412)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:22:31 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.2ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (30.98ms)
+Completed 200 OK in 48ms (Views: 19.0ms | ActiveRecord: 20.6ms | Allocations: 25403)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:27:34 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.5ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.14ms)
+Completed 200 OK in 34ms (Views: 17.8ms | ActiveRecord: 7.0ms | Allocations: 27346)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:27:34 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.2ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.36ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.9ms | Allocations: 5528)
+
+
+Started DELETE "/categories/1" for 127.0.0.1 at 2023-03-28 18:39:05 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `destroy'
+  [1m[36mCategory Destroy (1.2ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/categories_controller.rb:13:in `destroy'
+Completed 204 No Content in 36ms (ActiveRecord: 12.6ms | Allocations: 7401)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:39:08 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.46ms)
+Completed 200 OK in 19ms (Views: 4.4ms | ActiveRecord: 8.4ms | Allocations: 8580)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:39:08 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.3ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.71ms)
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 1.8ms | Allocations: 5412)
+
+
+Started DELETE "/categories/2" for 127.0.0.1 at 2023-03-28 18:39:10 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `destroy'
+  [1m[36mCategory Destroy (1.6ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/categories_controller.rb:13:in `destroy'
+Completed 204 No Content in 6ms (ActiveRecord: 1.9ms | Allocations: 913)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:39:10 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (10.7ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (26.18ms)
+Completed 200 OK in 34ms (Views: 15.5ms | ActiveRecord: 11.9ms | Allocations: 5312)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:39:11 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.4ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (19.66ms)
+Completed 200 OK in 39ms (Views: 21.0ms | ActiveRecord: 8.4ms | Allocations: 27133)
+
+
+Started DELETE "/categories/3" for 127.0.0.1 at 2023-03-28 18:43:17 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `destroy'
+  [1m[36mCategory Destroy (1.9ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/categories_controller.rb:13:in `destroy'
+Completed 204 No Content in 7ms (ActiveRecord: 2.5ms | Allocations: 938)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 18:43:29 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Restaurant"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (1.2ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Restaurant"], ["user_id", 1], ["created_at", "2023-03-29 01:43:29.405070"], ["updated_at", "2023-03-29 01:43:29.405070"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (0.98ms)
+Completed 201 Created in 40ms (Views: 1.9ms | ActiveRecord: 12.3ms | Allocations: 13350)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 18:43:32 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Restaurant"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.8ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Restaurant"], ["user_id", 1], ["created_at", "2023-03-29 01:43:32.735952"], ["updated_at", "2023-03-29 01:43:32.735952"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (0.89ms)
+Completed 201 Created in 18ms (Views: 1.7ms | ActiveRecord: 2.9ms | Allocations: 2923)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 18:44:15 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Restaurant"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Restaurant"], ["user_id", 1], ["created_at", "2023-03-29 01:44:15.294237"], ["updated_at", "2023-03-29 01:44:15.294237"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (0.99ms)
+Completed 201 Created in 16ms (Views: 2.1ms | ActiveRecord: 3.5ms | Allocations: 3103)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:44:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.6ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (5.27ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 1.9ms | Allocations: 5517)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-28 18:44:17 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.1ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mList Load (0.1ms)[0m  [1m[34mSELECT "lists".* FROM "lists" WHERE "lists"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (4.18ms)
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 0.7ms | Allocations: 5517)
+
+
+Started DELETE "/categories/6" for 127.0.0.1 at 2023-03-28 18:44:19 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `destroy'
+  [1m[36mCategory Destroy (1.6ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/categories_controller.rb:13:in `destroy'
+Completed 204 No Content in 5ms (ActiveRecord: 2.2ms | Allocations: 793)
+
+
+Started DELETE "/categories/7" for 127.0.0.1 at 2023-03-28 18:44:19 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"7"}
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:12:in `destroy'
+  [1m[36mCategory Destroy (1.9ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 7]]
+  ↳ app/controllers/categories_controller.rb:13:in `destroy'
+Completed 204 No Content in 8ms (ActiveRecord: 2.4ms | Allocations: 795)
+
+
+Started POST "/categories" for 127.0.0.1 at 2023-03-28 18:46:42 -0700
+Processing by CategoriesController#create as */*
+  Parameters: {"category"=>"Travel"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:6:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mCategory Create (0.7ms)[0m  [1m[32mINSERT INTO "categories" ("category", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["category", "Travel"], ["user_id", 1], ["created_at", "2023-03-29 01:46:42.715210"], ["updated_at", "2023-03-29 01:46:42.715210"]]
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/categories_controller.rb:7:in `create'
+[active_model_serializers] Rendered CategorySerializer with ActiveModelSerializers::Adapter::Attributes (0.54ms)
+Completed 201 Created in 14ms (Views: 1.1ms | ActiveRecord: 2.9ms | Allocations: 2909)
+
+

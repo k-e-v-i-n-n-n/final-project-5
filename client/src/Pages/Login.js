@@ -46,7 +46,7 @@ const Login = () => {
 
         <div className="login-container" >
 
-            {user?.username ? <p>Bonjour, {user.username}</p> : 
+            {user?.username ? <p className="login-greeting">Bonjour, {user.username}</p> : 
             <form className="login-form" >
                 <label className="login-labels" >Username</label>
                 <input type="text" value={username} placeholder="kevin@thefrenchthings.com" onChange={(e) => setUsername(e.target.value)} />

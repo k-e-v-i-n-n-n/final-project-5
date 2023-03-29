@@ -2,13 +2,14 @@ class ListsController < ApplicationController
 
     def create
         user = User.find_by!(id: session[:user_id])
-        list = user.lists.create(list_params)
+        list = user.lists.create!(list_params)
+        render json: list, status: :created
     end
 
     private
 
     def list_params
-        params.permit(:category, :word_id, :expression_id, categories_attributes: [:category])
+        params.permit(:category, :word_id, :expression_id)
     end
 
     def unprocessable(invalid)
