@@ -13,7 +13,7 @@ const [alert, setAlert] = useState(false)
 useEffect(() => {
     if(sourceLang === "en"){setLangOne("French"); setLangTwo("English")}
     else{setLangOne("English"); setLangTwo("French")}  
-}, sourceLang)
+}, [sourceLang])
 
 function save(e, path){
 e.preventDefault()
@@ -32,20 +32,26 @@ else{
             english: translationObject["en"],
             target: targetLang,
             })})
-        .then((r) => r.json()).then((r) =>{console.log("res", r); setSaveMode(null);updateState(r, path) })}}
-
+        .then((r) => r.json()).then((r) =>{setSaveMode(null);updateState(r, path);clearState()})}}
    
 
 function updateState(r, path) {
     const userArr = user[path]
     userArr.push(r)
     const updatedUser = {...user, [path]: userArr}
-    setUser(updatedUser)
-}
+    setUser(updatedUser)}
 
 function popObject(e){
-    setTranslationObject({...translationObject, [e.target.name]: e.target.value})
-}
+    setTranslationObject({...translationObject, [e.target.name]: e.target.value})}
+
+function clearState(){
+    const updatedOb = {...translationObject, [sourceLang]: "", [targetLang]:""}
+    setTranslationObject(updatedOb); setPostPath()}
+
+    function cancelState(){
+        setPostPath()
+        clearState()
+        setSaveMode(null)}
 
     return (
         <div className="overlay">
@@ -57,14 +63,14 @@ function popObject(e){
                     <input name={sourceLang} className="modal-input" value={translationObject[sourceLang]} onChange={(e) => popObject(e)} ></input>
                     <label>Type</label>
                     <select className="modal-input" onChange={(e) => {setTranslationObject({...translationObject, type: e.target.value}); setPostPath(e.target.value)}} >
-                        <option value="" defaultValue selected={true} >-Select Entry Type-</option>
-                        <option>expression</option>
-                        <option>word</option>
+                        <option value="" defaultValue>-Select Entry Type-</option>
+                        <option>Expression</option>
+                        <option>Word</option>
                     </select>
                     {alert && <p id="error-username">Please select entry Type</p>}
                     <div className="modal-button-container">
                         <button id="modal-save" onClick={(e) => {save(e)}} >save</button>
-                        <button id="modal-cancel" onClick={() => setSaveMode(null)}>cancel</button>
+                        <button id="modal-cancel" onClick={cancelState}>cancel</button>
                     </div>
                 </form>
             </div>

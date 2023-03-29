@@ -29,9 +29,7 @@ function App() {
       if(r.ok)
       {r.json().then((r) => setUser(r))}
       else
-      {{console.log("/me says", r);}}
-
-    })
+      {{console.log("/me says", r);}}})
   }, [])
 
   return (

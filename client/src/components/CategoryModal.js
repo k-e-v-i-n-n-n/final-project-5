@@ -3,7 +3,7 @@ import { AppContext } from "../Context"
 
 const CategoryModal = ({setShowModal}) => {
     const {user, setUser} = useContext(AppContext)
-    const [cat, setCat] = useState()
+    const [cat, setCat] = useState("")
   
     function makeCat(e){
         e.preventDefault()

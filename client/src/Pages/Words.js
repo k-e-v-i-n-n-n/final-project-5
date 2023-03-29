@@ -5,7 +5,7 @@ import { AppContext } from "../Context"
 const Words = () => {
 const {user} = useContext(AppContext)
 
-const wordMap = user?.words.map((word) => (<WordCard word={word}/> ))
+const wordMap = user?.words.map((word) => (<WordCard key={word.id} word={word}/> ))
 
     return(
         <div className="expressions-page">

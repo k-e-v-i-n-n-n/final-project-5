@@ -9,7 +9,7 @@ const Lists = () => {
 
     const {user} = useContext(AppContext)
 
-    const catMap = user?.categories.map((cat) => <Category cat={cat}/>)
+    const catMap = user?.categories.map((cat) => <Category key={cat.id} cat={cat}/>)
     return(
     <div className="category-page-container" >
          <CategoryList setShowModal={setShowModal}/>
