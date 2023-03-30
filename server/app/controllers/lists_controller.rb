@@ -9,7 +9,7 @@ class ListsController < ApplicationController
     private
 
     def list_params
-        params.permit(:category, :word_id, :expression_id)
+        params.permit(:word_id, :category_id)
     end
 
     def unprocessable(invalid)

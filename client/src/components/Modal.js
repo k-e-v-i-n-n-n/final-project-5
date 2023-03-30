@@ -61,13 +61,13 @@ function clearState(){
                     <input name={targetLang} className="modal-input" value={translationObject[targetLang]} onChange={(e) => popObject(e)} ></input>
                     <label  className="modal-label" >{langTwo}</label>
                     <input name={sourceLang} className="modal-input" value={translationObject[sourceLang]} onChange={(e) => popObject(e)} ></input>
-                    <label>Type</label>
+                    <label className="modal-label">Type</label>
                     <select className="modal-input" onChange={(e) => {setTranslationObject({...translationObject, type: e.target.value}); setPostPath(e.target.value)}} >
                         <option value="" defaultValue>-Select Entry Type-</option>
                         <option>Expression</option>
                         <option>Word</option>
                     </select>
-                    {alert && <p id="error-username">Please select entry Type</p>}
+                    {alert && <p id="error-modal">Please select entry Type</p>}
                     <div className="modal-button-container">
                         <button id="modal-save" onClick={(e) => {save(e)}} >save</button>
                         <button id="modal-cancel" onClick={cancelState}>cancel</button>

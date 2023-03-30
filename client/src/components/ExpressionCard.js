@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { AppContext } from "../Context"
 
-const ExpressionCard = ({expression}) => {
+const ExpressionCard = ({expression, setShowListModal}) => {
 
   const {user, setUser} = useContext(AppContext)
 
@@ -28,7 +28,10 @@ const ExpressionCard = ({expression}) => {
         <p className="source-expression-text">
           {expression.english}
         </p>
-        <button className="card-delete-x" onClick={(e) => deleteExp(e)}>x</button>
+        <div className="hidden-buttons-container">
+            <button className="card-delete-x" onClick={() => setShowListModal(true)} >★</button>
+          <button className="card-delete-x" onClick={(e) => deleteExp(e)}>x</button>
+        </div>
     </div>
   )
 }

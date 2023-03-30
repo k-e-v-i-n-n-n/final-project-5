@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { AppContext } from "../Context"
 
-const WordCard = ({word}) => {
+const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
 
   const {user, setUser} = useContext(AppContext)
 
@@ -24,7 +24,10 @@ const WordCard = ({word}) => {
           <p className="source-expression-text">
            {word.english}
           </p>
-          <button className="card-delete-x" onClick={(e) => deleteWord(e)}>x</button>
+          <div className="hidden-buttons-container">
+            <button className="card-delete-x" onClick={() => {setShowListModal(true); setWordState(word)}} >★</button>
+            <button className="card-delete-x" onClick={(e) => deleteWord(e)}>x</button>
+          </div>
       </div>
     )
   }
