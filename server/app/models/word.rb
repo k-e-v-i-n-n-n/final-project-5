@@ -1,5 +1,5 @@
 class Word < ApplicationRecord
     belongs_to :user
-    has_many :lists
-    has_many :categories, through: :lists
+    has_many :wordstars
+    has_many :categories, through: :wordstars
 end

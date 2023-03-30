@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :lists
+  resources :wordstars
   resources :categories
   resources :expressions
   resources :words

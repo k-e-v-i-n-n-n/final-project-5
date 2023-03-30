@@ -20,7 +20,7 @@ e.preventDefault()
 if (translationObject["type"] === "")
 {setAlert(true)}
 else{
-    if(postPath === "expression")
+    if(postPath === "Expression")
     {path = "expressions"}
     else {path = "words"}
 
@@ -62,9 +62,9 @@ function clearState(){
                     <label  className="modal-label" >{langTwo}</label>
                     <input name={sourceLang} className="modal-input" value={translationObject[sourceLang]} onChange={(e) => popObject(e)} ></input>
                     <label className="modal-label">Type</label>
-                    <select className="modal-input" onChange={(e) => {setTranslationObject({...translationObject, type: e.target.value}); setPostPath(e.target.value)}} >
+                    <select value={translationObject["type"]} className="modal-input" onChange={(e) => {setTranslationObject({...translationObject, type: e.target.value}); setPostPath(e.target.value)}} >
                         <option value="" defaultValue>-Select Entry Type-</option>
-                        <option>Expression</option>
+                        <option >Expression</option>
                         <option>Word</option>
                     </select>
                     {alert && <p id="error-modal">Please select entry Type</p>}

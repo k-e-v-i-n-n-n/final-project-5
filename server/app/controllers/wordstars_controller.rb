@@ -1,9 +1,12 @@
-class ListsController < ApplicationController
+class WordstarsController < ApplicationController
+    wrap_parameters false
 
     def create
         user = User.find_by!(id: session[:user_id])
-        list = user.lists.create!(list_params)
+        # byebug
+        list = user.wordstars.create!(list_params)
         render json: list, status: :created
+        
     end
 
     private

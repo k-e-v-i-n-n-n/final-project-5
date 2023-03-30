@@ -1,7 +1,7 @@
 import ExpressionCard from "../components/ExpressionCard"
 import {useContext, useState} from "react"
 import { AppContext } from "../Context"
-import ListModal from "../components/ListModal"
+
 
 const Expressions = () => {
 
@@ -16,7 +16,7 @@ return(
             <div className="expressions-page-container">
                 {expressionMap}
             </div>
-            {showListModal && <ListModal expState={expState} setShowListModal={setShowListModal}/>}
+            {/* {showListModal && <ListModal expState={expState} setShowListModal={setShowListModal}/>} */}
         </div>
     )
 }

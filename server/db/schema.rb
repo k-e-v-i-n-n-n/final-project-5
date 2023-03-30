@@ -31,15 +31,6 @@ ActiveRecord::Schema.define(version: 2023_03_28_220309) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "lists", force: :cascade do |t|
-    t.integer "category_id"
-    t.integer "word_id"
-    t.integer "expression_id"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -51,6 +42,14 @@ ActiveRecord::Schema.define(version: 2023_03_28_220309) do
     t.string "french"
     t.string "english"
     t.string "target"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "wordstars", force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "word_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

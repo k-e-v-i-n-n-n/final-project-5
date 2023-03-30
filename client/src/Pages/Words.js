@@ -1,7 +1,7 @@
 import WordCard from "../components/WordCard"
 import { useContext, useState } from "react"
 import { AppContext } from "../Context"
-import ListModal from "../components/ListModal"
+import WordStarModal from "../components/WordStarModal"
 
 const Words = () => {
 const {user} = useContext(AppContext)
@@ -15,7 +15,7 @@ const wordMap = user?.words.map((word) => (<WordCard setWordState={setWordState}
             <div className="expressions-page-container">
                 {wordMap} 
             </div>
-            {showListModal && <ListModal wordState={wordState} setShowListModal={setShowListModal}/>}
+            {showListModal && <WordStarModal wordState={wordState} setShowListModal={setShowListModal}/>}
         </div>
     )
 }
