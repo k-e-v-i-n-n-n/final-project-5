@@ -4,9 +4,9 @@ import { AppContext } from './Context'
 import axios from "axios"
 import Header1 from "./components/Header1"
 import Header2 from "./components/Header2"
+import Stars from './pages/Stars'
 import Translate from './pages/Translate'
 import Expressions from './pages/Expressions'
-import Stars from './pages/Stars'
 import Words from './pages/Words'
 import Login from './pages/Login'
 
