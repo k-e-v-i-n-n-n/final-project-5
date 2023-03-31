@@ -3,7 +3,7 @@ import {useContext, useState} from "react"
 import { AppContext } from "../Context"
 import WordStarModal from "../components/WordStarModal"
 
-const Expressions = ({showListModal, setShowListModal}) => {
+const Expressions = ({setShowListModal}) => {
 
 const {user, isLogged} = useContext(AppContext)
 const [expState, setExpState] = useState()
