@@ -1,24 +1,13 @@
 {
-  "name": "phase-5-repo",
-  "version": "1.0.0",
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
-  "main": "index.js",
+  "name": "phase-4-deploying-app-demo",
+  "description": "Build scripts for Heroku",
+  "engines": {
+    "node": "16.x"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd client && npm start",
-    "server": "cd server && rails s",
-    "translator": "cd client && nodemon translate_server.js"
-    
-    
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/keveeen/phase-5-repo.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/keveeen/phase-5-repo/issues"
-  },
-  "homepage": "https://github.com/keveeen/phase-5-repo#readme"
+    "build": "npm install --prefix client && npm run build --prefix client",
+    "clean": "rm -rf public",
+    "deploy": "cp -a client/build/. public/",
+    "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+  }
 }
