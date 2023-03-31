@@ -31,6 +31,9 @@ module ReactRailsApiProjectTemplate
 
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    
+    config.paths['config/routes'] = 'phase-5-repo/config/routes.rb'
+
 
     # Configuration for the application, engines, and railties goes here.
     #
