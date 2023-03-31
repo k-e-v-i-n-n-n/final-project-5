@@ -19215,3 +19215,134 @@ Processing by WordsController#create as */*
 Completed 201 Created in 23ms (Views: 8.6ms | ActiveRecord: 5.1ms | Allocations: 5968)
 
 
+Started GET "/me" for 127.0.0.1 at 2023-03-31 09:46:43 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 19ms (Views: 0.7ms | ActiveRecord: 6.7ms | Allocations: 4100)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-31 09:46:43 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.07ms)
+Completed 401 Unauthorized in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 771)
+
+
+Started POST "/login" for 127.0.0.1 at 2023-03-31 09:46:51 -0700
+Processing by SessionsController#create as */*
+  Parameters: {"username"=>"z", "password"=>"[FILTERED]", "session"=>{"username"=>"z", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "z"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:3:in `create'
+[active_model_serializers]   [1m[36mExpression Load (0.9ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers]   [1m[36mWordstar Load (0.5ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/sessions_controller.rb:6:in `create'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (8.18ms)
+Completed 201 Created in 278ms (Views: 6.2ms | ActiveRecord: 2.9ms | Allocations: 6378)
+
+
+Started POST "/wordstars" for 127.0.0.1 at 2023-03-31 09:47:01 -0700
+Processing by WordstarsController#create as */*
+  Parameters: {"category_id"=>"2", "word_id"=>2}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWord Load (1.4ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWordstar Create (3.2ms)[0m  [1m[32mINSERT INTO "wordstars" ("category_id", "word_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 2], ["word_id", 2], ["user_id", 1], ["created_at", "2023-03-31 16:47:01.252238"], ["updated_at", "2023-03-31 16:47:01.252238"]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+[active_model_serializers] Rendered WordstarSerializer with ActiveModelSerializers::Adapter::Attributes (1.98ms)
+Completed 201 Created in 38ms (Views: 3.3ms | ActiveRecord: 9.1ms | Allocations: 5429)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-31 09:50:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.2ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.2ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (24.99ms)
+Completed 200 OK in 41ms (Views: 18.8ms | ActiveRecord: 14.3ms | Allocations: 22653)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-31 09:50:42 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.6ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.2ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (15.46ms)
+Completed 200 OK in 33ms (Views: 12.4ms | ActiveRecord: 11.1ms | Allocations: 17746)
+
+
+Started POST "/wordstars" for 127.0.0.1 at 2023-03-31 09:50:53 -0700
+Processing by WordstarsController#create as */*
+  Parameters: {"category_id"=>"4", "word_id"=>2}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWordstar Create (1.1ms)[0m  [1m[32mINSERT INTO "wordstars" ("category_id", "word_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 4], ["word_id", 2], ["user_id", 1], ["created_at", "2023-03-31 16:50:53.120717"], ["updated_at", "2023-03-31 16:50:53.120717"]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+[active_model_serializers] Rendered WordstarSerializer with ActiveModelSerializers::Adapter::Attributes (1.76ms)
+Completed 201 Created in 30ms (Views: 3.2ms | ActiveRecord: 4.6ms | Allocations: 5468)
+
+

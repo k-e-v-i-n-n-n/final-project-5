@@ -27,7 +27,7 @@ function starState(r){
     const catArr = user.categories
     const singleCat = catArr.find((c) => c.id === r.category_id)
     const catWords = singleCat.words
-    const wordsArr = [...catWords, r.word]
+    const wordsArr = Array.isArray(catWords) ? [...catWords, r.word] : [r.word]
    
     const newSingleCat = {...singleCat, words: wordsArr}
     const catFilter = catArr.filter((c) => c.id !== r.category_id)
