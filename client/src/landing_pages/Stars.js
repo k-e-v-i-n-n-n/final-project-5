@@ -1,4 +1,4 @@
-import {useState, useContext} from "react"
+import {useState, useContext, useEffect} from "react"
 import { AppContext } from "../Context"
 import Category from "../components/Category"
 import CategoryList from "../components/CategoryList"
@@ -11,7 +11,9 @@ const Stars = ({catSelected, setCatSelected, setShowListModal, setWordState}) =>
     const {user, isLogged} = useContext(AppContext)
 
     const catMap = user?.categories?.map((cat) => <Category setCatSelected={setCatSelected} key={cat.id} category={cat}/>)
+    
     const wordMap = catSelected?.words?.map((w) => <WordStarCard setWordState={setWordState} key={w.id} word={w} setShowListModal={setShowListModal}/>)
+    
     const singleCat =  <Category setCatSelected={setCatSelected} key={catSelected.id} category={catSelected}/>
 
     return(
@@ -37,9 +39,6 @@ const Stars = ({catSelected, setCatSelected, setShowListModal, setWordState}) =>
                 {catMap}
                 </div>
                  {showModal && <CategoryModal setShowModal={setShowModal}/>}
-                <div className="expressions-page-container">
-                    {catSelected && wordMap}
-                </div>
             </div> }
         </>
             :

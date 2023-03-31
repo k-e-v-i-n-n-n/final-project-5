@@ -31,7 +31,6 @@ function starState(r){
    
     const newSingleCat = {...singleCat, words: wordsArr}
     const catFilter = catArr.filter((c) => c.id !== r.category_id)
-    console.log("singleCat", newSingleCat)
 
     const newCategory = [...catFilter, newSingleCat]
     const updatedUser = {...user, categories: newCategory}

@@ -11,14 +11,10 @@ const Translate = ({translateText}) => {
 
     const [saveMode, setSaveMode] = useState(null)
 
-    console.log("isLogged", isLogged)
-
     function routeIt(){
         if (isLogged === false){
             navigate("/login")}
     }
-
-
 
 return (
     <div className="translate-page" onClick={routeIt}>
