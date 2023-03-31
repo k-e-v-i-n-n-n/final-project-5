@@ -1,13 +1,12 @@
 import ExpressionCard from "../components/ExpressionCard"
 import {useContext, useState} from "react"
 import { AppContext } from "../Context"
-import WordStarModal from "../components/WordStarModal"
+
 
 const Expressions = ({setShowListModal}) => {
 
 const {user, isLogged} = useContext(AppContext)
 const [expState, setExpState] = useState()
-
 
 const expressionMap = user?.expressions.map((expression) => (<ExpressionCard setExpState={setExpState} setShowListModal={setShowListModal} key={expression.id} expression={expression}/>))
     
