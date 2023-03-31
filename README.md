@@ -30,4 +30,8 @@ Expressions
 
 Words
 
-    This page shows you a list of word translations that you've saved. You can delete, edit, and star (i.e. save to a category) but clicking one of the three buttons that appear on hovering an indivual word.
+    This page shows you a list of word translations that you've saved. You can delete, edit, and star (i.e. save to a category) buy clicking one of the three buttons that appear on hovering an indivual word.
+
+Stars
+
+    On the stars page, you can add a new category to your category list. And you can click an individual category to display all the words youve starred under that category. To remove a category, click the x on the category you'd like to remove.
