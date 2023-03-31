@@ -40,7 +40,9 @@ const Login = () => {
         if(r.ok)
             {r.json().then((r) => {setUser(r); navigate("/")})}
         else 
-            {r.json().then((err) => {setErrors(err.errors)})}}
+            {r.json().then((err) => {setErrors(err.errors);console.log("errors", err) })}}
+
+            console.log("errors", errors)
 
     return(
 

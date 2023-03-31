@@ -1,6 +1,8 @@
 class WordsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
+
+    before_action :authorize
     
         def index
             words = Word.all
@@ -11,6 +13,12 @@ class WordsController < ApplicationController
             user = User.find_by!(id: session[:user_id])
             word = user.words.create!(word_params)
             render json: word, status: :created
+        end
+
+        def update
+            word = Word.find(params[:id])
+            word.update!(word_params)
+            render json: word, status: :ok
         end
     
         def destroy
@@ -31,6 +39,10 @@ class WordsController < ApplicationController
     
         def not_found
             render json: {errors: user.errors.full_messages}, status: :not_found
+        end
+
+        def authorize
+            render json: {errors: "Request not authorized, please login"}, status: :unauthorized unless session.include? :user_id
         end
     
         

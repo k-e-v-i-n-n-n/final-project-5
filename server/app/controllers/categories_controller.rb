@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
+    
+    before_action :authorize
 
     def index
         categories = Category.all
@@ -8,11 +10,9 @@ class CategoriesController < ApplicationController
     end
 
     def show_cat
-
         user = User.find(session[:user_id])
         categories = user.categories
         render json: categories
-
     end
 
     def create
@@ -39,5 +39,9 @@ class CategoriesController < ApplicationController
 
     def not_found
         render json: {errors: user.errors.full_messages}, status: :not_found
+    end
+
+    def authorize
+        render json: {errors: "Request not authorized, please login"}, status: :unauthorized unless session.include? :user_id
     end
 end

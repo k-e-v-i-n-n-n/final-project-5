@@ -1,14 +1,9 @@
 import { useContext } from "react"
 import { AppContext } from "../Context"
 
-const WordStarCard = ({word, setShowListModal, wordState, setWordState}) => {
+const WordStarCard = ({word}) => {
 
   const {user, setUser} = useContext(AppContext)
-
-  function deleteWord(e){
-    e.preventDefault()
-    fetch(`/words/${word.id}`, {method: "DELETE"})
-    .then(() => updateWordState())}
 
   function updateWordState(){
     const wordArr = user.words
@@ -24,10 +19,6 @@ const WordStarCard = ({word, setShowListModal, wordState, setWordState}) => {
           <p className="source-expression-text">
            {word.english}
           </p>
-          <div className="hidden-buttons-container">
-            {/* <button className="card-delete-x" onClick={() => {setShowListModal(true); setWordState(word)}} >★</button>
-            <button className="card-delete-x" onClick={(e) => deleteWord(e)}>x</button> */}
-          </div>
       </div>
     )
   }

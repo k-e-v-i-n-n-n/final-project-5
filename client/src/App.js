@@ -1,5 +1,5 @@
 import {React, useEffect, useState, useContext} from 'react'
-import {Routes, Route, useNavigate, useParams} from 'react-router-dom'
+import {Routes, Route} from 'react-router-dom'
 import { AppContext } from './Context'
 import axios from "axios"
 import Header1 from "./components/Header1"
@@ -12,7 +12,7 @@ import Login from './pages/Login'
 
 function App() {
 
-  const {translationObject, setTranslationObject, sourceLang, targetLang, user, setUser} = useContext(AppContext)
+  const {translationObject, setTranslationObject, sourceLang, targetLang, user, setUser, setIsLogged} = useContext(AppContext)
   const sourceText = translationObject[sourceLang]
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
@@ -30,10 +30,16 @@ function App() {
     fetch("/me")
     .then((r) =>{
       if(r.ok)
-      {r.json().then((r) => setUser(r))}
+      {r.json().then((r) => {setUser(r); setIsLogged(true)})}
       else
-      {{console.log("/me says", r);}}})
+      {console.log("/me says", r)}})
   }, [])
+
+  useEffect(() =>{
+    if(user){
+      setIsLogged(true)}
+      else{setIsLogged(false)}
+  },[user])
 
 
   return (

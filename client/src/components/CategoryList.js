@@ -5,8 +5,8 @@ const CategoryList = ({setShowModal}) => {
     <>
     
          <div className="category-title-container" >
-            <div className="categories-title" >Select a Category or</div>
-            <button className="add-new-button" onClick={() => setShowModal(true)} >Add New Category</button>
+            <div className="categories-title" >Select ⇩ or ⇨ </div>
+            <button className="add-new-button" onClick={() => setShowModal(true)} >Add New</button>
          </div>
         
     </>

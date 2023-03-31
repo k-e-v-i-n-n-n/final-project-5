@@ -19,7 +19,7 @@ function deleteCat(){
     return(
 
       <div className="category-card-container" onClick={()=>setCatSelected(category)} >
-        <p>{category.category}</p>
+        <p className="category-title" >{category.category}</p>
         <div>
           <button className="category-delete-x" onClick={(e) => {deleteCat(e);}}>x</button>
         </div>

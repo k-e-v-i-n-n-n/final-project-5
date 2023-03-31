@@ -1,6 +1,5 @@
 class Expression < ApplicationRecord
     belongs_to :user
-    # has_many :wordstars
-    # has_many :categories, through: :wordstars
- 
+    validates :french, presence: true
+    validates :english, presence: true
 end

@@ -15,9 +15,10 @@ useEffect(() => {
     else{setLangOne("English"); setLangTwo("French")}  
 }, [sourceLang])
 
-function save(e, path){
+function save(e){
 e.preventDefault()
-if (translationObject["type"] === "")
+let path
+if (translationObject["type"] === "" || translationObject["fr"] === "" || translationObject["en"] === "")
 {setAlert(true)}
 else{
     if(postPath === "Expression")
@@ -45,7 +46,7 @@ function popObject(e){
     setTranslationObject({...translationObject, [e.target.name]: e.target.value})}
 
 function clearState(){
-    const updatedOb = {...translationObject, [sourceLang]: "", [targetLang]:""}
+    const updatedOb = {...translationObject, [sourceLang]: "", [targetLang]:"", ["type"]:""}
     setTranslationObject(updatedOb); setPostPath()}
 
     function cancelState(){
@@ -67,7 +68,7 @@ function clearState(){
                         <option >Expression</option>
                         <option>Word</option>
                     </select>
-                    {alert && <p id="error-modal">Please select entry Type</p>}
+                    {alert && <p id="error-modal">Please fill in all fields</p>}
                     <div className="modal-button-container">
                         <button id="modal-save" onClick={(e) => {save(e)}} >save</button>
                         <button id="modal-cancel" onClick={cancelState}>cancel</button>

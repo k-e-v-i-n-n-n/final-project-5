@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2023_03_28_220309) do
   create_table "wordstars", force: :cascade do |t|
     t.integer "category_id"
     t.integer "word_id"
-    t.integer "expression_id"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -2,13 +2,15 @@ class ExpressionsController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
 
+    before_action :authorize
+
     def index
         expressions = Expression.all
         render json: expressions
     end
 
     def create
-        user = User.find_by!(id: session[:user_id])
+        user = User.find(session[:user_id])
         expression = user.expressions.create!(expression_params)
         render json: expression, status: :created
     end
@@ -31,5 +33,9 @@ class ExpressionsController < ApplicationController
 
     def expression_params
         params.permit(:french, :english, :target)
+    end
+
+    def authorize
+        render json: {errors: "Request not authorized, please login"}, status: :unauthorized unless session.include? :user_id
     end
 end
