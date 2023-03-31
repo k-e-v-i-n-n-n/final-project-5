@@ -19569,3 +19569,160 @@ Processing by WordstarsController#create as */*
 Completed 201 Created in 75ms (Views: 2.7ms | ActiveRecord: 33.1ms | Allocations: 25525)
 
 
+Started GET "/me" for 127.0.0.1 at 2023-03-31 10:25:35 -0700
+Started GET "/me" for 127.0.0.1 at 2023-03-31 10:25:35 -0700
+Processing by UsersController#show as */*
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.04ms)
+Completed 401 Unauthorized in 15ms (Views: 0.3ms | ActiveRecord: 5.2ms | Allocations: 4078)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.03ms)
+Completed 401 Unauthorized in 15ms (Views: 0.3ms | ActiveRecord: 5.4ms | Allocations: 4107)
+
+
+Started GET "/" for ::1 at 2023-03-31 10:25:37 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.7ms | Allocations: 294)
+Completed 200 OK in 23ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 2682)
+
+
+Started GET "/favicon.ico" for ::1 at 2023-03-31 10:25:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2023-03-31 10:26:52 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 9.3ms | Allocations: 178)
+Completed 200 OK in 15ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 711)
+
+
+Started GET "/" for ::1 at 2023-03-31 10:26:54 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 231)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-31 10:27:13 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.4ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.7ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.2ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (41.7ms)
+Completed 200 OK in 45ms (Views: 33.3ms | ActiveRecord: 9.8ms | Allocations: 20710)
+
+
+Started GET "/me" for 127.0.0.1 at 2023-03-31 10:27:13 -0700
+Processing by UsersController#show as */*
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:15:in `show'
+[active_model_serializers]   [1m[36mExpression Load (0.3ms)[0m  [1m[34mSELECT "expressions".* FROM "expressions" WHERE "expressions"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.3ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."user_id" = $1[0m  [["user_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.9ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.1ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 1]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.1ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.2ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 2]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.7ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 3]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWord Load (0.4ms)[0m  [1m[34mSELECT "words".* FROM "words" INNER JOIN "wordstars" ON "words"."id" = "wordstars"."word_id" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers]   [1m[36mWordstar Load (0.7ms)[0m  [1m[34mSELECT "wordstars".* FROM "wordstars" WHERE "wordstars"."category_id" = $1[0m  [["category_id", 4]]
+[active_model_serializers]   ↳ app/controllers/users_controller.rb:17:in `show'
+[active_model_serializers] Rendered UserSerializer with ActiveModelSerializers::Adapter::Attributes (36.79ms)
+Completed 200 OK in 60ms (Views: 33.1ms | ActiveRecord: 13.2ms | Allocations: 37918)
+
+
+Started DELETE "/categories/3" for 127.0.0.1 at 2023-03-31 10:27:17 -0700
+Processing by CategoriesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:25:in `destroy'
+  [1m[36mCategory Destroy (2.3ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/categories_controller.rb:26:in `destroy'
+Completed 204 No Content in 16ms (ActiveRecord: 2.9ms | Allocations: 1090)
+
+
+Started POST "/wordstars" for 127.0.0.1 at 2023-03-31 10:27:31 -0700
+Processing by WordstarsController#create as */*
+  Parameters: {"category_id"=>"1", "word_id"=>2}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:7:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWord Load (0.5ms)[0m  [1m[34mSELECT "words".* FROM "words" WHERE "words"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mWordstar Create (1.0ms)[0m  [1m[32mINSERT INTO "wordstars" ("category_id", "word_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["category_id", 1], ["word_id", 2], ["user_id", 1], ["created_at", "2023-03-31 17:27:31.984377"], ["updated_at", "2023-03-31 17:27:31.984377"]]
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/wordstars_controller.rb:8:in `create'
+[active_model_serializers] Rendered WordstarSerializer with ActiveModelSerializers::Adapter::Attributes (2.02ms)
+Completed 201 Created in 50ms (Views: 4.0ms | ActiveRecord: 10.1ms | Allocations: 8120)
+
+
+Started GET "/" for ::1 at 2023-03-31 10:35:09 -0700
+  
+SyntaxError (/Users/kevinlocke/Dropbox/Development/code/encodeur/Phase-5-Project-and-Notes/phase-5-repo/server/config/routes.rb:23: syntax error, unexpected `end', expecting end-of-input):
+  
+config/routes.rb:23: syntax error, unexpected `end', expecting end-of-input
+config/routes.rb:23: syntax error, unexpected `end', expecting end-of-input
+Started GET "/" for ::1 at 2023-03-31 10:36:16 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.5ms | Allocations: 294)
+Completed 200 OK in 10ms (Views: 6.4ms | Allocations: 2270)
+
+
+Started GET "/" for ::1 at 2023-03-31 10:41:48 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.2ms | Allocations: 7)
+Completed 200 OK in 1ms (Views: 0.5ms | Allocations: 305)
+
+
+Started GET "/" for ::1 at 2023-03-31 10:41:50 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/kevinlocke/.rvm/gems/ruby-2.7.4/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.3ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.6ms | Allocations: 229)
+
+

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  namespace :api do
   resources :wordstars
   resources :categories
   resources :expressions
@@ -17,4 +17,7 @@ Rails.application.routes.draw do
  
   delete "/logout", to: "sessions#destroy"
 
+end
+
+get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
