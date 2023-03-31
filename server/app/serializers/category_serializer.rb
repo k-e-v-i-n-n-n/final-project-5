@@ -3,4 +3,5 @@ class CategorySerializer < ActiveModel::Serializer
   belongs_to :user
   has_many :words
   has_many :wordstars
+  # has_many :expressions
 end

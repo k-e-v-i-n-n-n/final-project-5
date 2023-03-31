@@ -2,6 +2,19 @@ class CategoriesController < ApplicationController
     rescue_from ActiveRecord::RecordNotFound, with: :not_found
     rescue_from ActiveRecord::RecordInvalid, with: :unprocessable
 
+    def index
+        categories = Category.all
+        render json: categories
+    end
+
+    def show_cat
+
+        user = User.find(session[:user_id])
+        categories = user.categories
+        render json: categories
+
+    end
+
     def create
         user = User.find_by!(id: session[:user_id])
         category = user.categories.create!(category_params)

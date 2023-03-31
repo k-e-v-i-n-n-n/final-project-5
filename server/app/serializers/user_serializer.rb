@@ -3,5 +3,5 @@ class UserSerializer < ActiveModel::Serializer
   has_many :expressions
   has_many :words
   has_many :categories
-  # has_many :lists
+  has_many :wordstars
 end

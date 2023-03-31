@@ -608,14 +608,13 @@ textarea:disabled{
   align-items: center;
   flex-direction: column;
 
-
 }
 
 .category-title-container{
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap:12px;
 
   padding: 20px;
@@ -652,6 +651,7 @@ textarea:disabled{
   background: white;
   border: .3px black solid;
   border-radius: 3px;
+  font-size: 18px;
 }
 
 .add-category-container{
@@ -697,5 +697,20 @@ textarea:disabled{
 
   top: 13px;
   left: 58px;
+}
+
+.star-select-page-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 14px;
+
+}
+
+#back-arrow{
+  position: relative;
+  top:34px;
+  right: 100px;
 }
 

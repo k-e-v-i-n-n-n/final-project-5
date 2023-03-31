@@ -8,6 +8,7 @@ const [sourceLang, setSourceLang] = useState("en")
 const [targetLang, setTargetLang] = useState("fr")
 const [translationObject, setTranslationObject] = useState({en: "", fr: "", type: "",})
 
+
     return(
     
         <AppContext.Provider value={{user, setUser, sourceLang, setSourceLang, targetLang, setTargetLang, translationObject, setTranslationObject}}>

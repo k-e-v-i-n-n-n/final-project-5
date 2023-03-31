@@ -3,4 +3,5 @@ class Category < ApplicationRecord
     belongs_to :user
     has_many :wordstars
     has_many :words, through: :wordstars
+    # has_many :expressions, through: :word_stars
 end

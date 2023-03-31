@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 
 
-function Header2() {
+function Header2({setCatSelected}) {
 
 
   return (
@@ -17,8 +17,8 @@ function Header2() {
         <Link to="/words">
          <button className="nav-buttons">words</button>
         </Link>
-        <Link to="/lists">
-        <button className="nav-buttons">lists</button>
+        <Link to="/stars">
+        <button className="nav-buttons" onClick={()=> setCatSelected(false)}>stars</button>
         </Link>
     </div>
   )

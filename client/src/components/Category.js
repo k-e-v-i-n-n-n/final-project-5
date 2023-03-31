@@ -1,29 +1,27 @@
 import { useContext } from "react"
 import { AppContext } from "../Context"
 
-const Category = ({cat}) => {
+const Category = ({category, setCatSelected}) => {
 
   const {user, setUser} = useContext(AppContext)
 
 function deleteCat(){
-  fetch(`/categories/${cat.id}`,{
+  fetch(`/categories/${category.id}`,{
     method: "DELETE"
   }).then(() => deleteState())}
 
   function deleteState(){
-
     const catArray = user.categories
-    const catFilter = catArray.filter((c) => c.id != cat.id)
+    const catFilter = catArray.filter((c) => c.id != category.id)
     const updatedUser = {...user, categories: catFilter}
-    setUser(updatedUser)
-  }
+    setUser(updatedUser)}
 
     return(
 
-      <div className="category-card-container" >
-        <p>{cat.category}</p>
+      <div className="category-card-container" onClick={()=>setCatSelected(category)} >
+        <p>{category.category}</p>
         <div>
-          <button className="category-delete-x" onClick={(e) => deleteCat(e)}>x</button>
+          <button className="category-delete-x" onClick={(e) => {deleteCat(e);}}>x</button>
         </div>
       </div>
         

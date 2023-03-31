@@ -3,7 +3,6 @@ class WordstarsController < ApplicationController
 
     def create
         user = User.find_by!(id: session[:user_id])
-        # byebug
         list = user.wordstars.create!(list_params)
         render json: list, status: :created
         

@@ -6,7 +6,7 @@ import Header1 from "./components/Header1"
 import Header2 from "./components/Header2"
 import Translate from './pages/Translate'
 import Expressions from './pages/Expressions'
-import Lists from './pages/Lists'
+import Stars from './pages/Stars'
 import Words from './pages/Words'
 import Login from './pages/Login'
 
@@ -14,6 +14,9 @@ function App() {
 
   const {translationObject, setTranslationObject, sourceLang, targetLang, user, setUser} = useContext(AppContext)
   const sourceText = translationObject[sourceLang]
+  const [showListModal, setShowListModal] = useState()
+  const [catSelected, setCatSelected] = useState(false)
+  const [wordState, setWordState] = useState()
 
   console.log("user", user)
 
@@ -32,15 +35,16 @@ function App() {
       {{console.log("/me says", r);}}})
   }, [])
 
+
   return (
     <>
         <Header1/>
-        <Header2/>
+        <Header2 setCatSelected={setCatSelected} />
         <Routes>
           <Route path="/" element={<Translate translateText={translateText}/>}/>
-          <Route path="/expressions" element={<Expressions/>}/>
-          <Route path="/words" element={<Words/>}/>
-          <Route path="/lists" element={<Lists/>}/>
+          <Route path="/expressions" element={<Expressions showListModal={showListModal} setShowListModal={setShowListModal} />}/>
+          <Route path="/words" element={<Words wordState={wordState} setWordState={setWordState} showListModal={showListModal} setShowListModal={setShowListModal} />}/>
+          <Route path="/stars" element={<Stars wordState={wordState} setWordState={setWordState} catSelected={catSelected} setCatSelected={setCatSelected} showListModal={showListModal} setShowListModal={setShowListModal} />}/>
           <Route path="/login" element={<Login/>}/>
         </Routes>
     </> 

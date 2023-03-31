@@ -3,10 +3,10 @@ import { useContext, useState } from "react"
 import { AppContext } from "../Context"
 import WordStarModal from "../components/WordStarModal"
 
-const Words = () => {
+const Words = ({showListModal, setShowListModal, wordState, setWordState}) => {
 const {user} = useContext(AppContext)
-const [showListModal, setShowListModal] = useState()
-const [wordState, setWordState] = useState()
+
+
 
 const wordMap = user?.words.map((word) => (<WordCard setWordState={setWordState}  key={word.id} word={word} setShowListModal={setShowListModal}/> ))
 

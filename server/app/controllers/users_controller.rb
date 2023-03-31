@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
         user = User.find_by(id: session[:user_id])
         if user
-            render json: user
+            render json: user, include: ["words", "expressions","categories.words", "categories.wordstars"]
         else
             render json: {error: "Unauthorized"}, status: :unauthorized
         end
