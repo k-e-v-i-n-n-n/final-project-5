@@ -25,14 +25,15 @@ const WordStarModal = ({setShowListModal, wordState}) => {
 function starState(r){
 
     const catArr = user.categories
-    const singleCat = catArr.find((c) => c.id == r.category_id)
-    const wordsArr = singleCat.words
-
-    wordsArr.push(r.word)
+    const singleCat = catArr.find((c) => c.id === r.category_id)
+    const wordsArr = [...singleCat.words, r.word]
+   
     const newSingleCat = {...singleCat, words: wordsArr}
-    const catFilter = catArr.filter((c) => c.id != r.category_id)
-    catFilter.push(newSingleCat)
-    const updatedUser = {...user, categories: catFilter}
+    const catFilter = catArr.filter((c) => c.id !== r.category_id)
+
+    const newCategory = [...catFilter, newSingleCat]
+    const updatedUser = {...user, categories: newCategory}
+
     setUser(updatedUser)
 }
 
