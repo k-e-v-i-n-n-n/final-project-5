@@ -5,19 +5,26 @@ import WordStarModal from "../components/WordStarModal"
 
 const Expressions = ({showListModal, setShowListModal}) => {
 
-const {user} = useContext(AppContext)
+const {user, isLogged} = useContext(AppContext)
 const [expState, setExpState] = useState()
 
 
 const expressionMap = user?.expressions.map((expression) => (<ExpressionCard setExpState={setExpState} setShowListModal={setShowListModal} key={expression.id} expression={expression}/>))
     
 return(
-        <div className="expressions-page">
-            <div className="expressions-page-container">
-                {expressionMap}
+
+    <>
+    {isLogged? 
+            <div className="expressions-page">
+                <div className="expressions-page-container">
+                    {expressionMap}
+                </div>
             </div>
-            {/* {showListModal && <WordStarModal expState={expState} setShowListModal={setShowListModal}/>} */}
-        </div>
+             :
+           <div className="landing-page">
+            <p>Please Login</p> 
+            </div>}    
+    </>
     )
 }
 

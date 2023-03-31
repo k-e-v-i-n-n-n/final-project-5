@@ -2,7 +2,7 @@ import { useContext, useState } from "react"
 import { AppContext } from "../Context"
 
 const WordStarModal = ({setShowListModal, wordState}) => {
-    const {user} = useContext(AppContext)
+    const {user, setUser} = useContext(AppContext)
     const [modalObj, setModalObj] = useState({category_id: "", word_id: wordState.id})
    
     function updateCat(e){
@@ -25,12 +25,18 @@ const WordStarModal = ({setShowListModal, wordState}) => {
 function starState(r){
 
     const catArr = user.categories
-    const singleCat = catArr.find((c) => c.id == r.category.id)
+    const singleCat = catArr.find((c) => c.id == r.category_id)
     const wordsArr = singleCat.words
+    console.log("wstar", wordsArr)
     wordsArr.push(r.word)
-    const newCategories = {...catArr, words: wordsArr}
-    const updatedUser = {...user, categories: newCategories}
+    const newSingleCat = {...singleCat, words: wordsArr}
+    const catFilter = catArr.filter((c) => c.id != r.category_id)
+    catFilter.push(newSingleCat)
+    const updatedUser = {...user, categories: catFilter}
+    setUser(updatedUser)
 }
+
+
 
 
     return(

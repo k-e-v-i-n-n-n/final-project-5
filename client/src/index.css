@@ -821,3 +821,10 @@ textarea:disabled{
   width:170px;
 }
 
+/* **********************************  isLogged? Not Logged In Landing Page */
+
+.landing-page{
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}

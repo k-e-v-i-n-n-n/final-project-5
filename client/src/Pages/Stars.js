@@ -8,15 +8,20 @@ import WordStarCard from "../components/WordStarCard"
 const Stars = ({catSelected, setCatSelected, showListModal, setShowListModal, wordState, setWordState}) => {
     const [showModal, setShowModal] = useState(false)
     
-    const {user} = useContext(AppContext)
+    const {user, isLogged} = useContext(AppContext)
+
 
     const catMap = user?.categories.map((cat) => <Category setCatSelected={setCatSelected} key={cat.id} category={cat}/>)
     const clickedCat = user?.categories.find((c) => c.id === catSelected.id)
     const wordMap = clickedCat?.words.map((w) => <WordStarCard setWordState={setWordState} key={w.id} word={w} setShowListModal={setShowListModal}/>)
     const singleCat =  <Category setCatSelected={setCatSelected} key={catSelected.id} category={catSelected}/>
 
+    // console.log("user.cat", typeof clickedCat.words)
+
     return(
 
+        <>
+        {isLogged? 
         <>
             {catSelected? 
             <div className="star-select-page-container">
@@ -40,6 +45,13 @@ const Stars = ({catSelected, setCatSelected, showListModal, setShowListModal, wo
                     {catSelected && wordMap}
                 </div>
             </div> }
+        </>
+            :
+            <div className="landing-page">
+            <p>Please Login</p> 
+        </div>}
+
+
         </>
     )
 }

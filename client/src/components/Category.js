@@ -5,7 +5,8 @@ const Category = ({category, setCatSelected}) => {
 
   const {user, setUser} = useContext(AppContext)
 
-function deleteCat(){
+function deleteCat(e){
+  e.stopPropagation()
   fetch(`/categories/${category.id}`,{
     method: "DELETE"
   }).then(() => deleteState())}
@@ -20,8 +21,8 @@ function deleteCat(){
 
       <div className="category-card-container" onClick={()=>setCatSelected(category)} >
         <p className="category-title" >{category.category}</p>
-        <div>
-          <button className="category-delete-x" onClick={(e) => {deleteCat(e);}}>x</button>
+        <div onClick={(e) => {deleteCat(e)}}>
+          <button className="category-delete-x" >x</button>
         </div>
       </div>
         
