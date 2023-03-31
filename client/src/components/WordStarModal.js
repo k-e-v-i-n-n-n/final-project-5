@@ -20,16 +20,18 @@ const WordStarModal = ({setShowListModal, wordState}) => {
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({category_id: modalObj["category_id"], word_id: modalObj["word_id"] })})
-        .then((r) => r.json()).then((r) =>{ setShowListModal(false); starState(r); console.log("wordstar", r)})}}
+        .then((r) => r.json()).then((r) =>{starState(r); setShowListModal(false)})}}
 
 function starState(r){
 
     const catArr = user.categories
     const singleCat = catArr.find((c) => c.id === r.category_id)
-    const wordsArr = [...singleCat.words, r.word]
+    const catWords = singleCat.words
+    const wordsArr = [...catWords, r.word]
    
     const newSingleCat = {...singleCat, words: wordsArr}
     const catFilter = catArr.filter((c) => c.id !== r.category_id)
+    console.log("singleCat", newSingleCat)
 
     const newCategory = [...catFilter, newSingleCat]
     const updatedUser = {...user, categories: newCategory}

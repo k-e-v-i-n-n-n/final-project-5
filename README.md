@@ -1,24 +1,33 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The French Things - Translator And Vocabulary Organizer
 
-Things you may want to cover:
+Overview
 
-* Ruby version
+    This application allows you to translate to and from French and English, store those translations in your profile as Words or Expressions, and build lists of words that are organized in categories you define.
 
-* System dependencies
+    To launch the application run the following commands from the root directory:
 
-* Configuration
+    1. npm run server
+    3. npm run translator
+    3. npm run start
 
-* Database creation
+Create Account or Login
 
-* Database initialization
+    To use any of the features, you'll need to create an account or login!
 
-* How to run the test suite
+Translate
 
-* Services (job queues, cache servers, search engines, etc.)
+    Click on the text input area to the left and enter the word or phrase you'd like to translate. If you'd like to reverse the languages, click the arrows between the text inputs.
 
-* Deployment instructions
+    When you're ready, click the translate button at the bottom and your translation will run.
 
-* ...
+    If you'd like to save this translation, click the save button and select the type--either an expression or word.
+
+Expressions
+
+    This page shows you a list of expression translations that you've saved. You can delete individual expressions by clicking the delete x.
+
+Words
+
+    This page shows you a list of word translations that you've saved. You can delete, edit, and star (i.e. save to a category) but clicking one of the three buttons that appear on hovering an indivual word.
