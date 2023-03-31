@@ -4,11 +4,11 @@ import { AppContext } from './Context'
 import axios from "axios"
 import Header1 from "./components/Header1"
 import Header2 from "./components/Header2"
-import Stars from './pages/Stars'
-import Translate from './pages/Translate'
-import Expressions from './pages/Expressions'
-import Words from './pages/Words'
-import Login from './pages/Login'
+import Stars from './landing_pages/Stars'
+import Translate from './landing_pages/Translate'
+import Expressions from './landing_pages/Expressions'
+import Words from './landing_pages/Words'
+import Login from './landing_pages/Login'
 
 function App() {
 

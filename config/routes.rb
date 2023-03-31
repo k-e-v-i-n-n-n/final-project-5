@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  # namespace :api do
+
+  # THIS IS CONFIGURED FOR DEPLOYEMENT!!! If you want to run on localhost, take out namspace :api and the *path fallback#index line at the bottom
+  namespace :api do
 
   resources :wordstars
   resources :categories
@@ -18,7 +20,7 @@ Rails.application.routes.draw do
  
   delete "/logout", to: "sessions#destroy"
 
-# end
+end
 
-# get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
+get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
