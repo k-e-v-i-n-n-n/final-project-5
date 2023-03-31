@@ -5,13 +5,12 @@ import CategoryList from "../components/CategoryList"
 import CategoryModal from "../components/CategoryModal"
 import WordStarCard from "../components/WordStarCard"
 
-const Stars = ({catSelected, setCatSelected, showListModal, setShowListModal, wordState, setWordState}) => {
+const Stars = ({catSelected, setCatSelected, setShowListModal, setWordState}) => {
     const [showModal, setShowModal] = useState(false)
     
     const {user, isLogged} = useContext(AppContext)
 
     const catMap = user?.categories?.map((cat) => <Category setCatSelected={setCatSelected} key={cat.id} category={cat}/>)
-    // const clickedCat = user?.categories?.find((c) => c.id === catSelected.id)
     const wordMap = catSelected?.words?.map((w) => <WordStarCard setWordState={setWordState} key={w.id} word={w} setShowListModal={setShowListModal}/>)
     const singleCat =  <Category setCatSelected={setCatSelected} key={catSelected.id} category={catSelected}/>
 

@@ -18,8 +18,6 @@ function App() {
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
 
-  console.log("user", user)
-
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
     const response = await axios.get('http://localhost:8000/translate', {params : data})
