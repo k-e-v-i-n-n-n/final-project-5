@@ -20,7 +20,7 @@ function App() {
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get('http://localhost:8000/translate', {params : data})
+    const response = await axios.get('/translate', {params : data})
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 
