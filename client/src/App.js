@@ -25,7 +25,7 @@ function App() {
   }
 
   useEffect(() =>{
-    fetch("/me")
+    fetch(`/me`)
     .then((r) =>{
       if(r.ok)
       {r.json().then((r) => {setUser(r); setIsLogged(true)})}

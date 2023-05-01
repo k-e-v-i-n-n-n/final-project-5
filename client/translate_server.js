@@ -1,4 +1,4 @@
-const PORT = processes.env.PORT ?? 8000
+const PORT = process.env.PORT ?? 8000
 const axios = require('axios').default
 const express = require('express')
 const cors = require('cors')
@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 
 
-app.get("/translate", async (req, res) => {
+app.get(`/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
     const options = {
       method: 'GET',

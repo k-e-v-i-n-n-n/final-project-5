@@ -20,7 +20,7 @@ const Login = () => {
 
     function createAccount (e){
         e.preventDefault()
-            fetch("/signup", {
+            fetch(`/signup`, {
                 method: "POST",
                 headers: {"Content-Type": "application/json"},
                 body: JSON.stringify(
@@ -29,7 +29,7 @@ const Login = () => {
 
     function login(e){
         e.preventDefault()
-        fetch("/login", {
+        fetch(`${process.env.REACT_APP_API_URL}/login`, {
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username, password})})
