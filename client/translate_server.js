@@ -8,7 +8,7 @@ const app = express()
 app.use(cors())
 
 
-app.get(`/translate`, async (req, res) => {
+app.get(`http://localhost:8000/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
     const options = {
       method: 'GET',
