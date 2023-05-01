@@ -17,10 +17,11 @@ function App() {
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
+  const expressUrl = process.env.REACT_APP_EXPRESS_SERVER
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get('/translate', {params : data})
+    const response = await axios.get(`${expressUrl}/translate`, {params : data})
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 

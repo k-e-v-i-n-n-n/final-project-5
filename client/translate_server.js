@@ -4,11 +4,12 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
 const app = express()
+const expressUrl = process.env.REACT_APP_EXPRESS_SERVER
 
 app.use(cors())
 
 
-app.get(`http://localhost:8000/translate`, async (req, res) => {
+app.get(`${expressUrl}/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
     const options = {
       method: 'GET',
