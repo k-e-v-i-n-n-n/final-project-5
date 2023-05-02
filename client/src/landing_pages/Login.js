@@ -29,7 +29,7 @@ const Login = () => {
 
     function login(e){
         e.preventDefault()
-        fetch(`${process.env.REACT_APP_API_URL}/login`, {
+        fetch(`/login`, {
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({username, password})})
