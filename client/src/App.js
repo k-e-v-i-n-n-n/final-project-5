@@ -10,6 +10,7 @@ import Expressions from './landing_pages/Expressions'
 import Words from './landing_pages/Words'
 import Login from './landing_pages/Login'
 
+
 function App() {
 
   const {translationObject, setTranslationObject, sourceLang, targetLang, user, setUser, setIsLogged} = useContext(AppContext)
@@ -17,7 +18,8 @@ function App() {
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
-  const expressUrl = process.env.REACT_APP_EXPRESS_SERVER
+  axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
+
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
