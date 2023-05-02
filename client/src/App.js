@@ -9,6 +9,7 @@ import Translate from './landing_pages/Translate'
 import Expressions from './landing_pages/Expressions'
 import Words from './landing_pages/Words'
 import Login from './landing_pages/Login'
+axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
 
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
-  axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
+
 
 
   const translateText = async () => {

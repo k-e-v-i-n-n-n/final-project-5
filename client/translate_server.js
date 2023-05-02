@@ -4,6 +4,7 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
 const app = express()
+axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
 
 
 app.use(cors())
