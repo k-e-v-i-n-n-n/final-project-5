@@ -11,13 +11,15 @@ app.use(cors())
 
 app.get(`/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
+    const encodedParams = new URLSearchParams();
+          encodedParams.set('q', sourceText);
+          encodedParams.set('target', targetLang);
+          encodedParams.set('source', sourceLang);
     const options = {
       method: 'GET',
       url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
       params: {
-        text: sourceText,
-        tl: targetLang,
-        sl: sourceLang
+        encodedParams
       },
       headers: {
         'content-type': 'application/x-www-form-urlencoded',
