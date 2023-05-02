@@ -13,13 +13,15 @@ app.get(`/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
     const options = {
       method: 'GET',
-      url: 'https://g-translate1.p.rapidapi.com/translate',
+      url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
       params: {
         text: sourceText,
         tl: targetLang,
         sl: sourceLang
       },
       headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Accept-Encoding': 'application/gzip',
         'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
         'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST
       }
