@@ -17,7 +17,7 @@ app.post(`/translate`, async (req, res) => {
           encodedParams.set('target', targetLang);
           encodedParams.set('source', sourceLang);
     const options = {
-      method: 'GET',
+      method: 'POST',
       url: 'https://google-translate1.p.rapidapi.com/language/translate/v2',
       params: {
         encodedParams
