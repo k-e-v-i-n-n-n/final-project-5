@@ -10,7 +10,7 @@ const app = express()
 app.use(cors())
 
 
-app.post(`/translate`, async (req, res) => {
+app.get(`/translate`, async (req, res) => {
     const {sourceLang, targetLang, sourceText} = req.query;
     const encodedParams = new URLSearchParams();
           encodedParams.set('q', sourceText);
