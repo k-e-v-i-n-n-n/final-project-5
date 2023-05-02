@@ -9,7 +9,7 @@ import Translate from './landing_pages/Translate'
 import Expressions from './landing_pages/Expressions'
 import Words from './landing_pages/Words'
 import Login from './landing_pages/Login'
-axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
+// axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get(`/translate`, {params : data})
+    const response = await axios.get(`${process.env.REACT_APP_EXPRESS_SERVER}/translate`, {params : data})
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 
