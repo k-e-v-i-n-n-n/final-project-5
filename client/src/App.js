@@ -9,8 +9,6 @@ import Translate from './landing_pages/Translate'
 import Expressions from './landing_pages/Expressions'
 import Words from './landing_pages/Words'
 import Login from './landing_pages/Login'
-// axios.defaults.baseURL = 'https://the-french-things.onrender.com:8000';
-
 
 function App() {
 
@@ -19,17 +17,17 @@ function App() {
   const [showListModal, setShowListModal] = useState()
   const [catSelected, setCatSelected] = useState(false)
   const [wordState, setWordState] = useState()
-
-
+  const [loading, setLoading] = useState(false);
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get(`/translate`, {params : data})
+    const response = await axios.get('http://localhost:8000/translate', {params : data})
+    setLoading(false);
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
 
   useEffect(() =>{
-    fetch(`/me`)
+    fetch("/me")
     .then((r) =>{
       if(r.ok)
       {r.json().then((r) => {setUser(r); setIsLogged(true)})}
@@ -51,7 +49,7 @@ function App() {
         <Header1/>
         <Header2 setCatSelected={setCatSelected} />
         <Routes>
-          <Route path="/" element={<Translate translateText={translateText}/>}/>
+          <Route path="/" element={<Translate loading={loading} setLoading={setLoading} translateText={translateText}/>}/>
           <Route path="/expressions" element={<Expressions showListModal={showListModal} setShowListModal={setShowListModal} />}/>
           <Route path="/words" element={<Words wordState={wordState} setWordState={setWordState} showListModal={showListModal} setShowListModal={setShowListModal} />}/>
           <Route path="/stars" element={<Stars wordState={wordState} setWordState={setWordState} catSelected={catSelected} setCatSelected={setCatSelected} showListModal={showListModal} setShowListModal={setShowListModal} />}/>
