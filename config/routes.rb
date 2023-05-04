@@ -3,11 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api do
 
-  resources :wordstars
-  resources :categories
-  resources :expressions
-  resources :words
-  resources :users
+
   
   post "/signup", to: "users#create"
 
@@ -16,6 +12,12 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
  
   delete "/logout", to: "sessions#destroy"
+
+  resources :wordstars
+  resources :categories
+  resources :expressions
+  resources :words
+  resources :users
 
 end
 #   # Routing logic: fallback requests for React Router.
