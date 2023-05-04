@@ -27,12 +27,12 @@ function App() {
   }
 
   useEffect(() =>{
-    fetch("/me")
+    fetch("/api/me")
     .then((r) =>{
       if(r.ok)
       {r.json().then((r) => {setUser(r); setIsLogged(true)})}
       else
-      {console.log("/me says", r)}})
+      {console.log("/api/me says", r)}})
   }, [])
 
   useEffect(() =>{
