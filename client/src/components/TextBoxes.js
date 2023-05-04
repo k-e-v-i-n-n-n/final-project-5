@@ -25,7 +25,7 @@ function TextBoxes({translateText, setSaveMode, loading, setLoading}) {
       <div className="translate-button-container">
         <button className="text-box-buttons" onClick={()=>{translateText(); setLoading(true)}}>translate</button>
         <button className="text-box-buttons" onClick={() => setSaveMode(true) }>save</button>
-        <button className="text-box-buttons" onClick={() => setTranslationObject(initialState)} >clear</button>
+        <button className="text-box-buttons" onClick={() => {setTranslationObject(initialState); setLoading(false)}} >clear</button>
       </div>
   </>
 
