@@ -21,7 +21,7 @@ function App() {
 
   const translateText = async () => {
     const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get('http://localhost:8000/translate', {params : data})
+    const response = await axios.get(`${process.env.REACT_APP_EXPRESS_SERVER}/translate`, {params : data})
     setLoading(false);
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
