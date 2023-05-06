@@ -22,11 +22,11 @@ Rails.application.routes.draw do
 
   end
 
-  scope :exp do
+  # scope :exp do
 
-    get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
+  #   get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
 
-  end
+  # end
 
     # New route for forwarding requests to your Express.js server
     # get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
