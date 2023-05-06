@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   scope :exp do
 
-    get '/exp/translate', to: proxy('/exp/translate', 'https://the-french-things.onrender.com:8000')
+    get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
 
   end
 
