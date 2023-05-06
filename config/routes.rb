@@ -19,6 +19,13 @@ Rails.application.routes.draw do
     resources :words
     resources :users
 
+
+  end
+
+  scope :exp do
+
+    get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
+
   end
 
     # New route for forwarding requests to your Express.js server
