@@ -1,3 +1,6 @@
+require 'action_dispatch/proxy'
+
+
 Rails.application.routes.draw do
 
 
