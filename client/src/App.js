@@ -20,7 +20,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const translateText = async () => {
-    const url = "https://the-french-things.onrender.com:8000"
+    const url = "https://the-french-things.onrender.com:8000/exp/translate"
     const data = {sourceText, sourceLang, targetLang, url}
     const response = await axios.get(`/translate`, {params : data})
     setLoading(false);
