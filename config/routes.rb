@@ -35,8 +35,6 @@ Rails.application.routes.draw do
     # get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
   #   # Routing logic: fallback requests for React Router.
   #   # Leave this here to help deploy your app later!
-  get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
-
-  # get '*path', to: 'fallback#index', constraints: ->(req) { !req.xhr? && (req.format.html? || req.content_type.include?('application/x-www-form-urlencoded') || req.content_type.include?('multipart/form-data')) }
+  # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end
