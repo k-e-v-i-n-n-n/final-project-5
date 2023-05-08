@@ -19,6 +19,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'http-proxy', '~> 0.1.0'
 gem 'rack-proxy'
 # gem 'actionpack', '~> 6.1.3', '>= 6.1.3.2'
+gem 'httparty'
+
 
 
 # Use Active Storage variant

@@ -20,11 +20,19 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const translateText = async () => {
-    const data = {sourceText, sourceLang, targetLang}
+    const url = "https://the-french-things.onrender.com:8000"
+    const data = {sourceText, sourceLang, targetLang, url}
     const response = await axios.get(`/translate`, {params : data})
     setLoading(false);
     setTranslationObject({...translationObject, [targetLang]: response.data})
   }
+
+   // const translateText = async () => {
+  //   const data = {sourceText, sourceLang, targetLang}
+  //   const response = await axios.get(`/translate`, {params : data})
+  //   setLoading(false);
+  //   setTranslationObject({...translationObject, [targetLang]: response.data})
+  // }
 
   useEffect(() =>{
     fetch("/api/me")

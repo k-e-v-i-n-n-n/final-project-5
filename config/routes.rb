@@ -25,6 +25,9 @@ Rails.application.routes.draw do
 
   end
 
+  post '/translate', to: 'proxy#forward', defaults: { format: :json }
+
+
   # scope :exp do
 
   #   get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
