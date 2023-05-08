@@ -25,7 +25,7 @@ Rails.application.routes.draw do
 
   end
 
-  post '/translate', to: 'proxy#forward', defaults: { format: :json }
+  get '/translate', to: 'proxy#forward', defaults: { format: :json }
 
 
   # scope :exp do
