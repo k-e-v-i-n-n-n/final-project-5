@@ -19,20 +19,20 @@ function App() {
   const [wordState, setWordState] = useState()
   const [loading, setLoading] = useState(false);
 
-  const translateText = async () => {
-    const url = "https://the-french-things.onrender.com:8000/exp/translate"
-    const data = {sourceText, sourceLang, targetLang, url}
-    const response = await axios.get(`/translate`, {params : data})
-    setLoading(false);
-    setTranslationObject({...translationObject, [targetLang]: response.data})
-  }
-
-   // const translateText = async () => {
-  //   const data = {sourceText, sourceLang, targetLang}
+  // const translateText = async () => {
+  //   const url = "https://the-french-things.onrender.com:8000/exp/translate"
+  //   const data = {sourceText, sourceLang, targetLang, url}
   //   const response = await axios.get(`/translate`, {params : data})
   //   setLoading(false);
   //   setTranslationObject({...translationObject, [targetLang]: response.data})
   // }
+
+   const translateText = async () => {
+    const data = {sourceText, sourceLang, targetLang}
+    const response = await axios.get('/translate', {params : data})
+    setLoading(false);
+    setTranslationObject({...translationObject, [targetLang]: response.data})
+  }
 
   useEffect(() =>{
     fetch("/api/me")
