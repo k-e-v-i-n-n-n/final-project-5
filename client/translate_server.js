@@ -4,8 +4,12 @@ const express = require('express')
 const cors = require('cors')
 require('dotenv').config()
 const app = express()
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(cors())
+
+app.use('/exp', createProxyMiddleware({ target: 'https://the-french-things.onrender.com:800/', changeOrigin: true }));
+
 
 
 app.get("/translate", async (req, res) => {
