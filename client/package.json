@@ -4,12 +4,12 @@
   "private": true,
   "proxy": {
     "/translate/.*(_get)": {
-      "target": "https://the-french-things.onrender.com:8000/",
+      "target": "https://the-french-things.onrender.com:8000/"
+    },
     "/.*": {
       "target": "https://the-french-things.onrender.com/",
       "changeOrigin": true
-    }
-  },
+    }},
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
