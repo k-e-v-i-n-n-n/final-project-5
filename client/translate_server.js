@@ -8,7 +8,7 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 
 app.use(cors())
 
-app.use('/exp', createProxyMiddleware({ target: 'https://the-french-things.onrender.com:800/', changeOrigin: true }));
+app.use('/translate', createProxyMiddleware({ target: 'https://the-french-things.onrender.com:800/', changeOrigin: true }));
 
 
 
