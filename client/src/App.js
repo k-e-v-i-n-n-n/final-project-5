@@ -27,12 +27,26 @@ function App() {
   //   setTranslationObject({...translationObject, [targetLang]: response.data})
   // }
 
-   const translateText = async () => {
-    const data = {sourceText, sourceLang, targetLang}
-    const response = await axios.get('/translate', {params : data})
-    setLoading(false);
-    setTranslationObject({...translationObject, [targetLang]: response.data})
-  }
+  //  const translateText = async () => {
+  //   const data = {sourceText, sourceLang, targetLang}
+  //   const response = await axios.get('/translate', {params : data})
+  //   setLoading(false);
+  //   setTranslationObject({...translationObject, [targetLang]: response.data})
+  // }
+
+  const translateText = fetch("https://libretranslate.com/translate", {
+    method: "POST",
+    body: JSON.stringify({
+      q: `${sourceText}`,
+      source: `${sourceLang}`,
+      target: `${targetLang}`,
+      format: "text",
+      api_key: ""
+    }),
+    headers: { "Content-Type": "application/json" }
+  }).then((r) => r.json()).then((response) => {setLoading(false);
+      setTranslationObject({...translationObject, [targetLang]: response.translatedText})})
+
 
   useEffect(() =>{
     fetch("/api/me")
