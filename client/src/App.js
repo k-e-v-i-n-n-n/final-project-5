@@ -48,7 +48,6 @@ function translateText(){
       else{setIsLogged(false)}
   },[user])
 
-
   return (
     <>
         <Header1/>
