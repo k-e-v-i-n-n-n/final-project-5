@@ -25,7 +25,7 @@ else{
     {path = "expressions"}
     else {path = "words"}
 
-    fetch(`/${path}`, {
+    fetch(`/api/${path}`, {
         method:"POST",
         headers: {"Content-Type":"application/json"},
         body: JSON.stringify({

@@ -16,7 +16,7 @@ const WordStarModal = ({setShowListModal, wordState}) => {
         if(modalObj["category_id"] === "")
         {alert("Please select a category")}
         else {
-        fetch("/wordstars",{
+        fetch("/api/wordstars",{
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({category_id: modalObj["category_id"], word_id: modalObj["word_id"] })})

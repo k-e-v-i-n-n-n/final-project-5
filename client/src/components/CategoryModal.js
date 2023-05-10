@@ -12,7 +12,7 @@ const CategoryModal = ({setShowModal}) => {
         if (cat === ""){
             setError("Please enter a category")}
         else{
-        fetch("/categories",{
+        fetch("/api/categories",{
             method:"POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify({

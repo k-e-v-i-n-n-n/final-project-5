@@ -7,7 +7,7 @@ const ExpressionCard = ({expression, setShowListModal, setExpState}) => {
 
   function deleteExp(e){
     e.preventDefault()
-    fetch(`/expressions/${expression.id}`, {
+    fetch(`/api/expressions/${expression.id}`, {
       method: "DELETE"}).then(() => updateExp())}
 
   function updateExp(){

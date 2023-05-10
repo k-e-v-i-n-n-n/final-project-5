@@ -7,7 +7,7 @@ const Category = ({category, setCatSelected}) => {
 
 function deleteCat(e){
   e.stopPropagation()
-  fetch(`/categories/${category.id}`,{
+  fetch(`/api/categories/${category.id}`,{
     method: "DELETE"
   }).then(() => deleteState())}
 

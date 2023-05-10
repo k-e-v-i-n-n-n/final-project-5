@@ -19,20 +19,6 @@ function App() {
   const [wordState, setWordState] = useState()
   const [loading, setLoading] = useState(false);
 
-  // const translateText = async () => {
-  //   const url = "https://the-french-things.onrender.com:8000/exp/translate"
-  //   const data = {sourceText, sourceLang, targetLang, url}
-  //   const response = await axios.get(`/translate`, {params : data})
-  //   setLoading(false);
-  //   setTranslationObject({...translationObject, [targetLang]: response.data})
-  // }
-
-  //  const translateText = async () => {
-  //   const data = {sourceText, sourceLang, targetLang}
-  //   const response = await axios.get('/translate', {params : data})
-  //   setLoading(false);
-  //   setTranslationObject({...translationObject, [targetLang]: response.data})
-  // }
 
 function translateText(){
   fetch(`https://g-translate1.p.rapidapi.com/translate?text=${sourceText}&tl=${targetLang}&sl=${sourceLang}`,{
@@ -45,21 +31,6 @@ function translateText(){
   setTranslationObject({...translationObject, [targetLang]: response.data.translation})})
   .catch((error) => {
 	console.error(error)})}
-
-  console.log("target", targetLang)
-
-  // function translateText(){fetch("https://libretranslate.com/translate", {
-  //   method: "POST",
-  //   body: JSON.stringify({
-  //     q: sourceText,
-  //     source: sourceLang,
-  //     target: targetLang,
-  //     format: "text",
-  //     api_key: ""
-  //   }),
-  //   headers: { "Content-Type": "application/json" }
-  // }).then((r) => r.json()).then((response) => {setLoading(false);
-  //     setTranslationObject({...translationObject, [targetLang]: response.translatedText})})}
 
 
   useEffect(() =>{

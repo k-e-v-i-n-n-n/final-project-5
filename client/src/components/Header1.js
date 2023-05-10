@@ -15,7 +15,7 @@ function Header1() {
                         </Link> </>
 
 function logOut() {
-  fetch("/logout",{
+  fetch("/api/logout",{
       method:"DELETE"
   })
   .then(() => {setUser(""); navigate("/login") })
