@@ -34,18 +34,32 @@ function App() {
   //   setTranslationObject({...translationObject, [targetLang]: response.data})
   // }
 
-  function translateText(){() => {fetch("https://libretranslate.com/translate", {
-    method: "POST",
-    body: JSON.stringify({
-      q: `${sourceText}`,
-      source: `${sourceLang}`,
-      target: `${targetLang}`,
-      format: "text",
-      api_key: ""
-    }),
-    headers: { "Content-Type": "application/json" }
-  }).then((r) => r.json()).then((response) => {setLoading(false);
-      setTranslationObject({...translationObject, [targetLang]: response.translatedText})})}}
+function translateText(){
+  fetch(`https://g-translate1.p.rapidapi.com/translate?text=${sourceText}&tl=${targetLang}&sl=${sourceLang}`,{
+
+  method: 'GET',
+	headers: {
+		  'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+      'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST
+	}, }).then((r) => r.json()).then((response) => {console.log("res", response);setLoading(false);
+  setTranslationObject({...translationObject, [targetLang]: response.data.translation})})
+  .catch((error) => {
+	console.error(error)})}
+
+  console.log("target", targetLang)
+
+  // function translateText(){fetch("https://libretranslate.com/translate", {
+  //   method: "POST",
+  //   body: JSON.stringify({
+  //     q: sourceText,
+  //     source: sourceLang,
+  //     target: targetLang,
+  //     format: "text",
+  //     api_key: ""
+  //   }),
+  //   headers: { "Content-Type": "application/json" }
+  // }).then((r) => r.json()).then((response) => {setLoading(false);
+  //     setTranslationObject({...translationObject, [targetLang]: response.translatedText})})}
 
 
   useEffect(() =>{
