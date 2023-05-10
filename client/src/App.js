@@ -34,7 +34,7 @@ function App() {
   //   setTranslationObject({...translationObject, [targetLang]: response.data})
   // }
 
-  const translateText = fetch("https://libretranslate.com/translate", {
+  function translateText(){() => {fetch("https://libretranslate.com/translate", {
     method: "POST",
     body: JSON.stringify({
       q: `${sourceText}`,
@@ -45,7 +45,7 @@ function App() {
     }),
     headers: { "Content-Type": "application/json" }
   }).then((r) => r.json()).then((response) => {setLoading(false);
-      setTranslationObject({...translationObject, [targetLang]: response.translatedText})})
+      setTranslationObject({...translationObject, [targetLang]: response.translatedText})})}}
 
 
   useEffect(() =>{
