@@ -13,6 +13,8 @@ const WordStarCard = ({word}) => {
           <p className="source-expression-text">
            {word.english}
           </p>
+          <div className="hidden-buttons-container">
+          </div>
       </div>
     )
   }

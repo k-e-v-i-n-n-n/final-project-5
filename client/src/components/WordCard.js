@@ -79,6 +79,6 @@ const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
     }
       </>
     )
-  }
+  } 
   
   export default WordCard
