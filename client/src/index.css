@@ -253,6 +253,12 @@ a {
   border: .1px solid black;
 }
 
+.nav-buttons:hover{
+
+  font-weight: 570;
+  /* font-size: 16px; */
+}
+
 /* ************************************************Login Page */
 
 .login-container {
@@ -370,6 +376,8 @@ a {
   padding: 8px;
   position: relative;
   font-family: "Poppins";
+  font-size: 14px;
+  color: black;
 }
 
 .text-box-center {
@@ -405,10 +413,16 @@ a {
   background:white;
 }
 
+.text-box-buttons:hover{
+
+  background:rgb(0, 0, 0);
+  color: white;
+}
+
 textarea:disabled{
   
   background-color:white;
- color: black;
+  color: rgb(0, 0, 0);
 }
 
 /* ***********************************************Save Modal */
@@ -629,7 +643,8 @@ textarea:disabled{
   font-size: 12px;
   display: flex;
   justify-content: center;
-  /* position: relative; */
+  align-items: center;
+
   visibility: hidden;
   border: .3px solid black;
   border-radius: 5px;
@@ -734,6 +749,7 @@ textarea:disabled{
 
 .category-title{
   font-weight: 500;
+  margin-top:8px;
 }
 
 .category-card-container:hover .category-delete-x{
@@ -741,18 +757,24 @@ textarea:disabled{
 }
 
 .category-delete-x{
-  font-size: 8px;
+  font-size: 12px;
   display: flex;
   justify-content: center;
+  align-items: center;
   position: relative;
   visibility: hidden;
-  border: .05px solid black;
-  border-radius: 5px;
+
+  border: none;
+
+  /* border: .3px solid black;
+  border-radius: 5px; */
   background: rgb(255, 255, 254);
+  width: 18px;
+  height: 18px;
   box-sizing: border-box;
 
-  top: 13px;
-  left: 58px;
+  top: 6px;
+  left: 56px;
 }
 
 .star-select-page-container{
