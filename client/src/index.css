@@ -721,6 +721,12 @@ textarea:disabled{
   font-size: 12px;
 }
 
+.add-new-button:hover{
+
+  color:white;
+  background-color: black;
+}
+
 .add-category-container{
   display: flex;
   flex-direction: column;
@@ -790,6 +796,11 @@ textarea:disabled{
   position: relative;
   top:34px;
   right: 100px;
+}
+
+#back-arrow:hover{
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .error-category-container{
