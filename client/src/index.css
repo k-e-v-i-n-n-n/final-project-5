@@ -796,6 +796,7 @@ textarea:disabled{
   position: relative;
   top:34px;
   right: 100px;
+  cursor: pointer;
 }
 
 #back-arrow:hover{
