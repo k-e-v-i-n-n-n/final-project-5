@@ -17,7 +17,6 @@ const WordCard = ({word, setShowListModal, wordState, setWordState}) => {
       headers:{"Content-Type": "application/json"},
       body: JSON.stringify({french: wordEdit.french, english: wordEdit.english})
     }).then((r) => r.json()).then((r) => {updateWordState(r); setEditMode(false)})
-
   }
 
   function setWord(e){

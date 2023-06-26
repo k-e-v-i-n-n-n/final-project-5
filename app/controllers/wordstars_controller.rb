@@ -1,13 +1,11 @@
 class WordstarsController < ApplicationController
     wrap_parameters false
-
     before_action :authorize
 
     def create
         user = User.find_by!(id: session[:user_id])
         list = user.wordstars.create!(list_params)
         render json: list, status: :created
-        
     end
 
     private

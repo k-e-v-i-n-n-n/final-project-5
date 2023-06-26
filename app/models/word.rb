@@ -4,4 +4,5 @@ class Word < ApplicationRecord
     validates :english, presence: true
     has_many :wordstars
     has_many :categories, through: :wordstars
+
 end

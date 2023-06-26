@@ -44,7 +44,7 @@ function translateText(){
 
   useEffect(() =>{
     if(user){
-      setIsLogged(true)}
+      setIsLogged(true); console.log("user", user)}
       else{setIsLogged(false)}
   },[user])
 

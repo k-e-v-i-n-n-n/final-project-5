@@ -70,7 +70,7 @@ function clearState(){
                     </select>
                     {alert && <p id="error-modal">Please fill in all fields</p>}
                     <div className="modal-button-container">
-                        <button id="modal-save" onClick={(e) => {save(e)}} >save</button>
+                        <button id="modal-save" onClick={(e) => {save(e)}}>save</button>
                         <button id="modal-cancel" onClick={cancelState}>cancel</button>
                     </div>
                 </form>

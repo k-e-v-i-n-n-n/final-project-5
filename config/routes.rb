@@ -1,13 +1,9 @@
 # require 'action_dispatch/proxy'
 
-
 Rails.application.routes.draw do
-
 
   scope :api do
 
-
-  
     post "/signup", to: "users#create"
 
     post "/login", to: "sessions#create"
@@ -22,21 +18,11 @@ Rails.application.routes.draw do
     resources :words
     resources :users
 
-
   end
 
-  # get '/translate', to: 'proxy#forward', defaults: { format: :json }
-
-  # scope :exp do
-
-  #   get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
-
-  # end
-
-    # New route for forwarding requests to your Express.js server
-    # get '/translate', to: proxy('/translate', 'https://the-french-things.onrender.com:8000')
   #   # Routing logic: fallback requests for React Router.
   #   # Leave this here to help deploy your app later!
+  
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end
